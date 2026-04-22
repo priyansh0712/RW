@@ -1,0 +1,39 @@
+Category Type = 
+SWITCH(
+    Sales[Category],
+    "Electronics", "High Value",
+    "Fashion", "Low Value",
+    "Other"
+)
+
+Upper Product = UPPER(Sales[Product])
+Full Info = Sales[Product] & " - " & Sales[Category]
+Name Length = LEN(Sales[Product])
+
+
+Year = YEAR(Sales[Date])
+Month = FORMAT(Sales[Date], "MMMM")
+Customer Name = RELATED(Customer[Name])
+Total Sales = 
+SUMX(Sales, Sales[Quantity] * Sales[UnitPrice])
+
+Electronics Sales = 
+CALCULATE(
+    [Total Sales],
+    Sales[Category] = "Electronics"
+)
+
+
+Total Quantity = SUM(Sales[Quantity])
+
+Total Sales All = 
+CALCULATE(
+    [Total Sales],
+    ALL(Sales)
+)
+
+% Contribution = 
+DIVIDE(
+    [Total Sales],
+    CALCULATE([Total Sales], ALL(Sales))
+)
