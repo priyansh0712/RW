@@ -34,23 +34,63 @@ The report includes:
 | 🖼️ `Dashboard Preview` | Dashboard screenshots |
 
 ---
+# 🧩 Data Modeling
 
-# 📁 Data Tables Used
+<img width="1517" height="720" alt="image" src="https://github.com/user-attachments/assets/40fc6c26-81fc-4586-80e7-a392472abdf9" />
 
-| Table | Description |
-|-------|-------------|
-| Orders | Main sales transaction dataset |
-| Customers | Customer-related information |
-| Products | Product and category details |
-| DateTable | Calendar table for time intelligence |
+
+A clean and optimized Star Schema model was created to improve dashboard performance, filtering efficiency, and relationship management.
 
 ---
+
+## 📁 Tables Used
+
+| Table | Type | Description |
+|-------|------|-------------|
+| Orders | Fact Table | Main transactional sales dataset |
+| Customers | Dimension Table | Customer-related information |
+| Products | Dimension Table | Product and category details |
+| DateTable | Dimension Table | Calendar table for time intelligence |
+
+---
+
+## 🔗 Relationships
+
+| From Table | To Table | Relationship |
+|------------|----------|--------------|
+| Orders | Customers | Many → One |
+| Orders | Products | Many → One |
+| Orders | DateTable | Many → One |
+
+---
+
+## 📌 Modeling Features
+
+- Star Schema Data Model
+- Single Direction Cross Filtering
+- Optimized Relationships
+- Hidden Unnecessary Columns
+- DateTable Marked as Official Date Table
+- Improved Filtering Performance
+- Structured Data Hierarchy
+
+---
+
+## ⚙️ Additional Steps Performed
+
+- Data cleaning using Power Query
+- Removed null and duplicate values
+- Corrected data types
+- Created calculated columns and measures
+- Optimized model for drillthrough and slicer interactions
 
 # 🧩 Dashboard Pages
 
 ---
 
 # 🔹 Page 1 — Overview
+
+<img width="1182" height="678" alt="image" src="https://github.com/user-attachments/assets/8d7ef6e7-98d1-4f4a-9f17-cf3b38edf951" />
 
 Main financial dashboard displaying company-wide sales performance and category insights.
 
@@ -76,6 +116,8 @@ Main financial dashboard displaying company-wide sales performance and category 
 ---
 
 # 🔹 Page 2 — Customer Insights
+
+<img width="1186" height="678" alt="image" src="https://github.com/user-attachments/assets/aabeff60-8b97-4cd6-b607-4291e575258c" />
 
 Customer-focused dashboard for analyzing customer performance and segment contribution.
 
@@ -104,6 +146,8 @@ Customer-focused dashboard for analyzing customer performance and segment contri
 
 # 🔹 Page 3 — Product Analysis
 
+<img width="1182" height="680" alt="image" src="https://github.com/user-attachments/assets/678be86e-0a3a-4435-914e-6283f34f9221" />
+
 Product-focused analysis dashboard showing top-performing products and category-level contribution.
 
 ### 📌 KPI Cards
@@ -124,6 +168,10 @@ Product-focused analysis dashboard showing top-performing products and category-
 ---
 
 # 🔹 Page 4 — Deep Dive (Drillthrough Page)
+
+<img width="1182" height="677" alt="image" src="https://github.com/user-attachments/assets/a527a661-149b-4bec-aacf-f87ac0be165e" />
+<img width="707" height="522" alt="image" src="https://github.com/user-attachments/assets/3718599e-c678-4f9b-978e-aca0398ba929" />
+
 
 Customer-level drillthrough analysis page designed for detailed customer insights.
 
@@ -151,12 +199,37 @@ Provides detailed analysis of selected customers including:
 
 # 🔹 Tooltip Page
 
+<img width="963" height="462" alt="image" src="https://github.com/user-attachments/assets/fc530b3e-2238-4b72-88bc-af1c9747db79" />
+
 A custom tooltip page designed using a Gauge Visual.
 
 ### 📌 Tooltip Features
 - Dynamic hover interaction
 - Gauge-based KPI visualization
 - Context-sensitive metric display
+---
+
+# 📱 Mobile Layout
+
+A fully optimized mobile-friendly layout was created for better accessibility and responsive dashboard viewing on smartphones.
+
+### 📌 Mobile Features
+- Responsive KPI arrangement
+- Optimized visual scaling
+- Vertical scrolling layout
+- Touch-friendly slicers and buttons
+- Simplified navigation experience
+
+### 📊 Mobile Pages Included
+<img width="460" height="663" alt="image" src="https://github.com/user-attachments/assets/776f97a7-e65d-4632-9b7e-a310fc219e4b" />
+<img width="456" height="492" alt="image" src="https://github.com/user-attachments/assets/11c40187-989f-4e22-8374-c58fe66cba1b" />
+
+- Overview
+- Customer Insights
+- Product Analysis
+- Deep Dive
+
+The mobile layout ensures a smooth and user-friendly dashboard experience across different screen sizes.
 
 ---
 
@@ -203,6 +276,9 @@ A custom tooltip page designed using a Gauge Visual.
 ---
 
 # 📐 DAX Measures Used
+<img width="245" height="401" alt="image" src="https://github.com/user-attachments/assets/cb9ff258-b54a-4366-bf49-e0a0378601cf" /><img width="232" height="523" alt="image" src="https://github.com/user-attachments/assets/5317748c-3975-4916-8f7b-b6bf6b23ac09" />
+
+
 
 ## Total Sales
 ```DAX
