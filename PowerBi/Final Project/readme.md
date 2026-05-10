@@ -221,6 +221,9 @@ A fully optimized mobile-friendly layout was created for better accessibility an
 - Simplified navigation experience
 
 ### 📊 Mobile Pages Included
+<img width="460" height="663" alt="image" src="https://github.com/user-attachments/assets/776f97a7-e65d-4632-9b7e-a310fc219e4b" />
+<img width="456" height="492" alt="image" src="https://github.com/user-attachments/assets/11c40187-989f-4e22-8374-c58fe66cba1b" />
+
 - Overview
 - Customer Insights
 - Product Analysis
