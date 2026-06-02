@@ -1,0 +1,22 @@
+Q1. Which region is underperforming and why?
+
+Answer:
+The West region appears to be underperforming because it has a higher number of cancelled and returned orders compared to other regions. This resulted in lower completed sales and higher revenue loss. The issue may be related to customer dissatisfaction, delayed deliveries, or operational inefficiencies.
+
+
+Q2. Are certain agents associated with more cancellations?
+
+Answer:
+Yes, certain sales agents are associated with higher cancellation rates. This may indicate weak customer handling, incorrect order processing, or poor follow-up communication. These agents may require additional training and performance monitoring.
+
+
+Q3. Which category needs promotion or improvement?
+
+Answer:
+The Furniture category requires improvement because it generated lower sales and experienced higher cancellations and returns. The business can improve this category through better product quality, promotional offers, and improved customer engagement.
+
+
+Q4. Is customer dissatisfaction concentrated in a region?
+
+Answer:
+Customer dissatisfaction appears to be concentrated in the West region due to the higher percentage of returned and cancelled orders. This suggests possible issues in logistics, delivery service, or customer support within that region.
