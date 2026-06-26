@@ -59,10 +59,14 @@ This part focuses on implementing the statistical concepts using Python and anal
 ### Data Visualization
 
 * Distribution Plots
+* <img width="1517" height="472" alt="image" src="https://github.com/user-attachments/assets/22c6f492-2b46-4698-a845-7ffb7a401943" />
 * Histogram
-* PDF Plot
-* CDF Plot
+* <img width="1347" height="463" alt="image" src="https://github.com/user-attachments/assets/c94242fa-6903-4c73-96b0-afbaaa41a544" />
+* PDF & CDF Plot
+* <img width="1486" height="562" alt="image" src="https://github.com/user-attachments/assets/4b1ffb1b-5d26-470f-b39f-50138ff1181a" />
 * Q-Q Plot
+* <img width="757" height="683" alt="image" src="https://github.com/user-attachments/assets/f3223ce6-f8ea-4f62-9531-c931bc1d4e11" />
+
 
 ---
 
