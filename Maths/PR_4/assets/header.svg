@@ -1,0 +1,245 @@
+<svg width="800" height="220" viewBox="0 0 800 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Fonts -->
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&amp;family=Space+Grotesk:wght@500;700&amp;display=swap');
+      
+      .title {
+        font-family: 'Outfit', sans-serif;
+        font-weight: 800;
+        font-size: 32px;
+        fill: url(#title-grad);
+        animation: text-pulse 4s ease-in-out infinite;
+      }
+      
+      .subtitle-top {
+        font-family: 'Space Grotesk', sans-serif;
+        font-weight: 700;
+        font-size: 11px;
+        letter-spacing: 2px;
+        fill: #6366f1;
+        animation: fade-in 1.5s ease-out forwards;
+      }
+      
+      .subtitle-bottom {
+        font-family: 'Outfit', sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        fill: #475569;
+        animation: slide-up 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+      
+      .grid-line {
+        stroke: #e2e8f0;
+        stroke-dasharray: 4 4;
+        animation: grid-draw 2s ease-out forwards;
+      }
+      
+      .axis {
+        stroke: #94a3b8;
+        stroke-width: 1.5;
+        animation: line-draw 1.5s ease-out forwards;
+      }
+      
+      .vector-1 {
+        stroke: #6366f1;
+        stroke-width: 3;
+        stroke-dasharray: 100;
+        stroke-dashoffset: 100;
+        animation: vector-draw-1 2s cubic-bezier(0.4, 0, 0.2, 1) 0.5s forwards;
+      }
+      
+      .vector-2 {
+        stroke: #ec4899;
+        stroke-width: 3;
+        stroke-dasharray: 120;
+        stroke-dashoffset: 120;
+        animation: vector-draw-2 2s cubic-bezier(0.4, 0, 0.2, 1) 0.8s forwards;
+      }
+      
+      .vector-proj {
+        stroke: #eab308;
+        stroke-width: 2;
+        stroke-dasharray: 4 4;
+        stroke-dashoffset: 50;
+        animation: proj-draw 1.5s ease-out 2s forwards;
+      }
+      
+      .proj-vector {
+        stroke: #eab308;
+        stroke-width: 3;
+        stroke-dasharray: 100;
+        stroke-dashoffset: 100;
+        animation: proj-vec-draw 2s ease-out 1.5s forwards;
+      }
+      
+      .vector-label {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 12px;
+        font-weight: 700;
+        opacity: 0;
+        animation: fade-in 1s ease-out 2.2s forwards;
+      }
+      
+      .label-v1 { fill: #6366f1; }
+      .label-v2 { fill: #ec4899; }
+      .label-proj { fill: #eab308; }
+      
+      .badge {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 10px;
+        font-weight: 700;
+        fill: #ffffff;
+      }
+      
+      .badge-bg {
+        fill: #312e81;
+        rx: 10px;
+        animation: fade-in 1s ease-out 2.5s forwards;
+        opacity: 0;
+      }
+      
+      .badge-text {
+        animation: fade-in 1s ease-out 2.5s forwards;
+        opacity: 0;
+      }
+      
+      /* Dark mode overrides */
+      @media (prefers-color-scheme: dark) {
+        .subtitle-bottom {
+          fill: #94a3b8;
+        }
+        .grid-line {
+          stroke: #1e293b;
+        }
+        .axis {
+          stroke: #475569;
+        }
+        .badge-bg {
+          fill: #1e1b4b;
+        }
+      }
+      
+      /* Keyframe animations */
+      @keyframes fade-in {
+        to { opacity: 1; }
+      }
+      @keyframes slide-up {
+        from { transform: translateY(15px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+      }
+      @keyframes text-pulse {
+        0%, 100% { filter: drop-shadow(0 0 2px rgba(99, 102, 241, 0.2)); }
+        50% { filter: drop-shadow(0 0 10px rgba(236, 72, 153, 0.4)); }
+      }
+      @keyframes grid-draw {
+        from { stroke-dashoffset: 40; opacity: 0; }
+        to { stroke-dashoffset: 0; opacity: 0.4; }
+      }
+      @keyframes line-draw {
+        from { stroke-dasharray: 200; stroke-dashoffset: 200; }
+        to { stroke-dashoffset: 0; }
+      }
+      @keyframes vector-draw-1 {
+        to { stroke-dashoffset: 0; }
+      }
+      @keyframes vector-draw-2 {
+        to { stroke-dashoffset: 0; }
+      }
+      @keyframes proj-draw {
+        to { stroke-dashoffset: 0; opacity: 0.8; }
+      }
+      @keyframes proj-vec-draw {
+        to { stroke-dashoffset: 0; }
+      }
+    </style>
+    
+    <!-- Gradients -->
+    <linearGradient id="title-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6366f1" />
+      <stop offset="50%" stop-color="#ec4899" />
+      <stop offset="100%" stop-color="#eab308" />
+    </linearGradient>
+    
+    <!-- Arrow marker -->
+    <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8" />
+    </marker>
+    <marker id="arrow-v1" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#6366f1" />
+    </marker>
+    <marker id="arrow-v2" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#ec4899" />
+    </marker>
+    <marker id="arrow-proj" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#eab308" />
+    </marker>
+  </defs>
+
+  <!-- Vector Space Graph Grid -->
+  <g id="vector-space">
+    <!-- Grid Lines -->
+    <line x1="30" y1="50" x2="210" y2="50" class="grid-line" />
+    <line x1="30" y1="80" x2="210" y2="80" class="grid-line" />
+    <line x1="30" y1="140" x2="210" y2="140" class="grid-line" />
+    <line x1="30" y1="170" x2="210" y2="170" class="grid-line" />
+    
+    <line x1="60" y1="20" x2="60" y2="200" class="grid-line" />
+    <line x1="90" y1="20" x2="90" y2="200" class="grid-line" />
+    <line x1="150" y1="20" x2="150" y2="200" class="grid-line" />
+    <line x1="180" y1="20" x2="180" y2="200" class="grid-line" />
+
+    <!-- Axes -->
+    <!-- X-Axis -->
+    <line x1="30" y1="110" x2="210" y2="110" class="axis" marker-end="url(#arrow)" />
+    <!-- Y-Axis -->
+    <line x1="120" y1="200" x2="120" y2="20" class="axis" marker-end="url(#arrow)" />
+
+    <!-- Origin (120, 110) -->
+    <!-- Vector 1 (scores profile 1): points to (180, 50) => dx=60, dy=-60 -->
+    <line x1="120" y1="110" x2="176" y2="54" class="vector-1" marker-end="url(#arrow-v1)" />
+    
+    <!-- Vector 2 (scores profile 2): points to (200, 140) => dx=80, dy=30 -->
+    <line x1="120" y1="110" x2="195" y2="138" class="vector-2" marker-end="url(#arrow-v2)" />
+
+    <!-- Projection of Vector 1 onto Vector 2 -->
+    <!-- Projection line (perpendicular line from V1 endpoint to V2) -->
+    <line x1="180" y1="50" x2="152.9" y2="122.3" class="vector-proj" />
+    
+    <!-- Projection Vector (on V2) -->
+    <line x1="120" y1="110" x2="152.9" y2="122.3" class="proj-vector" marker-end="url(#arrow-proj)" />
+
+    <!-- Labels -->
+    <text x="185" y="45" class="vector-label label-v1">v&#8321;</text>
+    <text x="205" y="150" class="vector-label label-v2">v&#8322;</text>
+    <text x="145" y="140" class="vector-label label-proj">proj<sub>v&#8322;</sub>v&#8321;</text>
+  </g>
+
+  <!-- Typography Content -->
+  <g id="text-content">
+    <text x="260" y="60" class="subtitle-top">LINEAR ALGEBRA &amp; MACHINE LEARNING</text>
+    <text x="260" y="110" class="title">Calculative Foundation</text>
+    <text x="260" y="145" class="subtitle-bottom">Student Performance Analysis using Matrix Operations</text>
+    
+    <!-- Tech pills/badges at the bottom -->
+    <!-- Badge 1: SVD -->
+    <rect x="260" y="175" width="45" height="20" class="badge-bg" />
+    <text x="282.5" y="189" text-anchor="middle" class="badge badge-text">SVD</text>
+    
+    <!-- Badge 2: PCA -->
+    <rect x="312" y="175" width="45" height="20" class="badge-bg" />
+    <text x="334.5" y="189" text-anchor="middle" class="badge badge-text">PCA</text>
+    
+    <!-- Badge 3: LDA -->
+    <rect x="364" y="175" width="45" height="20" class="badge-bg" />
+    <text x="386.5" y="189" text-anchor="middle" class="badge badge-text">LDA</text>
+
+    <!-- Badge 4: LU Decomposition -->
+    <rect x="416" y="175" width="110" height="20" class="badge-bg" />
+    <text x="471" y="189" text-anchor="middle" class="badge badge-text">LU DECOMPOSITION</text>
+
+    <!-- Badge 5: Matrix Norms -->
+    <rect x="533" y="175" width="90" height="20" class="badge-bg" />
+    <text x="578" y="189" text-anchor="middle" class="badge badge-text">VECTOR NORMS</text>
+  </g>
+</svg>
