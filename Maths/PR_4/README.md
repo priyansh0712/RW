@@ -34,70 +34,38 @@ The implementation is done in Python using a Jupyter Notebook.
 
 <img src="assets/title_structure.svg" alt="Project Structure &amp; Tasks" width="100%">
 
-### 📐 Part A: Vector & Matrix Fundamentals
-Each student's subject scores are represented as a vector: $\vec{v} = [x_{\text{Math}}, y_{\text{Science}}, z_{\text{English}}]$.
+### 📐 Part A: Vector & Matrix 
+<img width="1104" height="720" alt="Vector and Matrix Fundamentals - visual selection" src="https://github.com/user-attachments/assets/d9a4c818-6e56-4e06-8855-a37b96074231" />
 
-*   **Vector Norms**:
-    *   **L1 Norm (Manhattan Distance)**: Measures total academic load.
-        $$\|\vec{v}\|_1 = \sum_{i=1}^n |v_i|$$
-    *   **L2 Norm (Euclidean Distance)**: Represents overall academic strength as a vector distance from origin.
-        $$\|\vec{v}\|_2 = \sqrt{\sum_{i=1}^n v_i^2}$$
-*   **Dot Product & Angle**: Evaluates similarity in performance profiles.
-    $$\vec{u} \cdot \vec{v} = \|\vec{u}\| \|\vec{v}\| \cos\theta \implies \theta = \arccos\left(\frac{\vec{u} \cdot \vec{v}}{\|\vec{u}\| \|\vec{v}\|}\right)$$
-*   **Vector Projection**: Measures relative alignment of one student's scores onto another.
-    $$\text{proj}_{\vec{u}}\vec{v} = \left(\frac{\vec{v} \cdot \vec{u}}{\|\vec{u}\|^2}\right) \vec{u}$$
-*   **Cross Product**: Computes a normal vector in 3D space indicating orthogonal academic paths.
-*   **Visualizations**:
-    *   **2D Vector Plot**: Representing Math vs Science.
-    *   **3D Vector Plot**: 3D spatial plotting of Math, Science, and English.
+### 🧮 Part B: Vector Operations
+<img width="996" height="496" alt="_- visual selection" src="https://github.com/user-attachments/assets/a52b49f6-fe8b-40bf-895e-e5f51dc35024" />
 
-### 🧮 Part B: Matrix Operations
-We construct a Student-Subject matrix $A$ of dimensions $M \times N$ (rows: students, columns: subjects).
-*   **Matrix Multiplication**: Computes the student-to-student similarity matrix via $A \cdot A^T$.
-*   **Transpose**: Swapping axes $A^T$ to pivot between student-centric and subject-centric views.
-*   **Determinant & Inverse**: Solving systems of equations $A\vec{x} = \vec{b}$ and ensuring linear independence:
-    $$\det(A) \neq 0 \implies A^{-1} \text{ exists}$$
-*   **Heatmap Visualization**: Plotting score matrices using `plt.imshow()` with annotated score values.
 
 ### 🌐 Part C: Linear Transformations & Geometry
 Interpreting geometric subspaces spanned by student databases:
-*   **Line (1D/2D Subspace)**: Progression profile over 2 subjects.
-*   **Plane (3D Subspace)**: Progression profile over 3 subjects.
-*   **Hyperplane ($N$-D Space)**: Complex multi-dimensional representations (4+ subjects).
+###   *Line (1D/2D Subspace)*
+   <img width="858" height="486" alt="Line - visual selection" src="https://github.com/user-attachments/assets/fe9f41f3-6ce3-4655-bcc0-cf08793f2b36" />
 
-### 🔑 Part D: Eigenvalues & Decomposition
-*   **Covariance Matrix**: Analyzing statistical score co-movements:
-    $$\Sigma = \frac{1}{M-1} X^T X$$
-*   **Eigenvalues & Eigenvectors**: Extracting axes of principal variation (academic profile traits):
-    $$A\vec{v} = \lambda\vec{v}$$
-*   **LU Decomposition**: Decomposing matrix $A$ into Lower ($L$) and Upper ($U$) triangular components with permutation $P$:
-    $$P A = L U$$
-*   **Singular Value Decomposition (SVD)**: Decomposing to reveal hidden student groupings:
-    $$A = U \Sigma V^T$$
+###   *Plane (3D Subspace)*
+   <img width="858" height="486" alt="Line - visual selection (1)" src="https://github.com/user-attachments/assets/593daf24-9edd-4619-81a8-46c78f4e94b1" />
+
+###   *Hyperplane ($N$-D Space)*
+   <img width="876" height="936" alt="Line - visual selection (2)" src="https://github.com/user-attachments/assets/dd5eb341-f05b-4d72-8f71-17a7a515bced" />
+
+
+### 🔑 Part D: Eigenvalues
+<img width="876" height="726" alt="Eigenvalue and Eigenvector - visual selection" src="https://github.com/user-attachments/assets/20b7e6b7-714b-4b64-84b4-ac01df90f08e" />
+
 
 ### 📉 Part E: Dimensionality Reduction
-*   **Principal Component Analysis (PCA)**: Projecting students into a 2D space of maximum variance (PC1 vs PC2) to simplify evaluation.
-*   **Linear Discriminant Analysis (LDA)**: Finding a projection vector that maximizes separation between "Pass" and "Fail" academic tiers:
-    $$J(\vec{w}) = \frac{\vec{w}^T S_B \vec{w}}{\vec{w}^T S_W \vec{w}}$$
+###   **Principal Component Analysis (PCA)**
+   <img width="996" height="662" alt="Eigenvalue and Eigenvector - visual selection (1)" src="https://github.com/user-attachments/assets/ca0057cc-478e-4b6b-955b-018ce180275e" />
 
----
+###   **Linear Discriminant Analysis (LDA)**
+   <img width="852" height="682" alt="Eigenvalue and Eigenvector - visual selection (2)" src="https://github.com/user-attachments/assets/c77663a4-f3bf-4c4a-a44b-85e97d4883b5" />
 
-<img src="assets/title_run.svg" alt="How to Run the Notebook" width="100%">
-
-1.  **Clone the repository**:
-    ```bash
-    git clone <your-repo-link>
-    cd PR_4
-    ```
-2.  **Install dependencies**:
-    ```bash
-    pip install numpy scipy matplotlib scikit-learn jupyter
-    ```
-3.  **Launch Jupyter Notebook**:
-    ```bash
-    jupyter notebook
-    ```
-4.  Open and run all cells in [pr_4.ipynb](file:///d:/RW/RW_Exam/Maths/PR_4/pr_4.ipynb).
+###   **PCA vs LDA**
+   <img width="1104" height="810" alt="Eigenvalue and Eigenvector - visual selection (3)" src="https://github.com/user-attachments/assets/07ecf06e-2f9b-434d-9cd9-f651d6a89d12" />
 
 ---
 
