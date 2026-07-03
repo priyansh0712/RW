@@ -26,12 +26,6 @@ The implementation is done in Python using a Jupyter Notebook.
 
 ---
 
-<img src="assets/title_demo.svg" alt="Visual Demonstration" width="100%">
-
-<video src="assets/20260702-1443-44.7086436.mp4" width="100%" controls autoplay loop muted></video>
-
----
-
 <img src="assets/title_structure.svg" alt="Project Structure &amp; Tasks" width="100%">
 
 ### 📐 Part A: Vector & Matrix 
