@@ -1,0 +1,172 @@
+<svg width="600" height="200" viewBox="0 0 600 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&amp;family=Space+Grotesk:wght@500;700&amp;display=swap');
+      
+      .panel-bg {
+        fill: #f8fafc;
+        stroke: #e2e8f0;
+        stroke-width: 1.5;
+        rx: 12px;
+      }
+      
+      .panel-title {
+        font-family: 'Space Grotesk', sans-serif;
+        font-weight: 700;
+        font-size: 11px;
+        letter-spacing: 1px;
+        fill: #475569;
+        text-transform: uppercase;
+      }
+      
+      .label-text {
+        font-family: 'Outfit', sans-serif;
+        font-weight: 700;
+        font-size: 14px;
+        fill: #0f172a;
+      }
+      
+      .sub-text {
+        font-family: 'Outfit', sans-serif;
+        font-weight: 500;
+        font-size: 11px;
+        fill: #475569;
+      }
+      
+      .math-text {
+        font-family: 'Space Grotesk', sans-serif;
+        font-weight: 700;
+        font-size: 14px;
+        fill: #1e1b4b; /* Deep high-contrast blue for light mode */
+      }
+      
+      .math-formula-large {
+        font-family: 'Space Grotesk', sans-serif;
+        font-weight: 700;
+        font-size: 18px;
+        fill: #1e1b4b;
+      }
+      
+      .graphic-stroke {
+        stroke: #4f46e5;
+        stroke-width: 2.5;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        fill: none;
+      }
+      
+      .accent-stroke {
+        stroke: #10b981;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        fill: none;
+      }
+      
+      .axis-line {
+        stroke: #475569;
+        stroke-width: 1.5;
+        stroke-linecap: round;
+      }
+      
+      .grid-line {
+        stroke: #cbd5e1;
+        stroke-width: 1;
+        stroke-dasharray: 2 2;
+      }
+      
+      .highlight-box {
+        fill: #f1f5f9;
+        stroke: #cbd5e1;
+        stroke-width: 1;
+        rx: 6px;
+      }
+
+      /* Color-coding for Bayes Theorem */
+      .color-posterior { fill: #e11d48; } /* Rose */
+      .color-likelihood { fill: #4f46e5; } /* Indigo */
+      .color-prior { fill: #059669; } /* Emerald */
+      .color-evidence { fill: #475569; } /* Slate */
+
+      @media (prefers-color-scheme: dark) {
+        .panel-bg {
+          fill: #0f172a;
+          stroke: #1e293b;
+        }
+        .panel-title {
+          fill: #94a3b8;
+        }
+        .label-text {
+          fill: #f8fafc;
+        }
+        .sub-text {
+          fill: #94a3b8;
+        }
+        .math-text {
+          fill: #ffffff; /* Crisp white for dark mode */
+        }
+        .math-formula-large {
+          fill: #ffffff;
+        }
+        .axis-line {
+          stroke: #475569;
+        }
+        .grid-line {
+          stroke: #334155;
+        }
+        .highlight-box {
+          fill: #1e293b;
+          stroke: #334155;
+        }
+        .color-posterior { fill: #fb7185; }
+        .color-likelihood { fill: #818cf8; }
+        .color-prior { fill: #34d399; }
+        .color-evidence { fill: #94a3b8; }
+      }
+    </style>
+
+    <marker id="arrow-green-q2" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 2 L 8 5 L 0 8 z" fill="#10b981" />
+    </marker>
+  </defs>
+  <rect width="600" height="200" class="panel-bg" />
+  
+  <!-- Left Side: Curve -->
+  <g transform="translate(30, 20)">
+    <text x="0" y="20" class="panel-title">Q2 Visual Concept</text>
+    <text x="0" y="40" class="label-text">Variance &amp; Standard Deviation</text>
+    
+    <line x1="20" y1="130" x2="220" y2="130" class="axis-line" />
+    
+    <!-- Shaded area for sigma -->
+    <path d="M 85 130 C 105 130 110 85 120 85 C 130 85 135 130 155 130 Z" fill="#10b981" fill-opacity="0.15" />
+    
+    <!-- Normal Curve -->
+    <path d="M 40 130 C 70 130 90 70 120 70 C 150 70 170 130 200 130" class="graphic-stroke" />
+    
+    <line x1="120" y1="70" x2="120" y2="130" class="grid-line" />
+    <line x1="85" y1="100" x2="155" y2="100" stroke="#10b981" stroke-width="1.5" marker-start="url(#arrow-green-q2)" marker-end="url(#arrow-green-q2)" />
+    
+    <text x="120" y="145" text-anchor="middle" class="sub-text">Mean (μ)</text>
+    <text x="120" y="115" text-anchor="middle" class="sub-text" fill="#10b981" style="font-weight: 600;">Spread (σ)</text>
+  </g>
+  
+  <!-- Right Side: Math Formulas -->
+  <g transform="translate(300, 20)">
+    <rect x="0" y="10" width="270" height="40" class="highlight-box" />
+    <text x="15" y="34" class="math-text">Std Deviation: σ ≈ ₹27,753.30</text>
+    
+    <g transform="translate(15, 75)">
+      <!-- Variance definition -->
+      <text x="0" y="10" class="label-text" style="font-size:12px;">Variance (σ²):</text>
+      <text x="0" y="28" class="math-text">≈ 770,245,609.88 (₹² units)</text>
+      
+      <!-- Std Dev definition -->
+      <text x="0" y="55" class="label-text" style="font-size:12px;">Standard Deviation (σ):</text>
+      <text x="0" y="73" class="math-text">≈ ₹27,753.30 (Original units)</text>
+    </g>
+    
+    <text x="15" y="165" class="sub-text">Std Dev measures spread in the same units as the data</text>
+  </g>
+</svg>

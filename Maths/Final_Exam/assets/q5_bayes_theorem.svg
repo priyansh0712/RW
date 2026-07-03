@@ -1,0 +1,184 @@
+<svg width="600" height="220" viewBox="0 0 600 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&amp;family=Space+Grotesk:wght@500;700&amp;display=swap');
+      
+      .panel-bg {
+        fill: #f8fafc;
+        stroke: #e2e8f0;
+        stroke-width: 1.5;
+        rx: 12px;
+      }
+      
+      .panel-title {
+        font-family: 'Space Grotesk', sans-serif;
+        font-weight: 700;
+        font-size: 11px;
+        letter-spacing: 1px;
+        fill: #475569;
+        text-transform: uppercase;
+      }
+      
+      .label-text {
+        font-family: 'Outfit', sans-serif;
+        font-weight: 700;
+        font-size: 14px;
+        fill: #0f172a;
+      }
+      
+      .sub-text {
+        font-family: 'Outfit', sans-serif;
+        font-weight: 500;
+        font-size: 11px;
+        fill: #475569;
+      }
+      
+      .math-text {
+        font-family: 'Space Grotesk', sans-serif;
+        font-weight: 700;
+        font-size: 14px;
+        fill: #1e1b4b; /* Deep high-contrast blue for light mode */
+      }
+      
+      .math-formula-large {
+        font-family: 'Space Grotesk', sans-serif;
+        font-weight: 700;
+        font-size: 18px;
+        fill: #1e1b4b;
+      }
+      
+      .graphic-stroke {
+        stroke: #4f46e5;
+        stroke-width: 2.5;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        fill: none;
+      }
+      
+      .accent-stroke {
+        stroke: #10b981;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        fill: none;
+      }
+      
+      .axis-line {
+        stroke: #475569;
+        stroke-width: 1.5;
+        stroke-linecap: round;
+      }
+      
+      .grid-line {
+        stroke: #cbd5e1;
+        stroke-width: 1;
+        stroke-dasharray: 2 2;
+      }
+      
+      .highlight-box {
+        fill: #f1f5f9;
+        stroke: #cbd5e1;
+        stroke-width: 1;
+        rx: 6px;
+      }
+
+      /* Color-coding for Bayes Theorem */
+      .color-posterior { fill: #e11d48; } /* Rose */
+      .color-likelihood { fill: #4f46e5; } /* Indigo */
+      .color-prior { fill: #059669; } /* Emerald */
+      .color-evidence { fill: #475569; } /* Slate */
+
+      @media (prefers-color-scheme: dark) {
+        .panel-bg {
+          fill: #0f172a;
+          stroke: #1e293b;
+        }
+        .panel-title {
+          fill: #94a3b8;
+        }
+        .label-text {
+          fill: #f8fafc;
+        }
+        .sub-text {
+          fill: #94a3b8;
+        }
+        .math-text {
+          fill: #ffffff; /* Crisp white for dark mode */
+        }
+        .math-formula-large {
+          fill: #ffffff;
+        }
+        .axis-line {
+          stroke: #475569;
+        }
+        .grid-line {
+          stroke: #334155;
+        }
+        .highlight-box {
+          fill: #1e293b;
+          stroke: #334155;
+        }
+        .color-posterior { fill: #fb7185; }
+        .color-likelihood { fill: #818cf8; }
+        .color-prior { fill: #34d399; }
+        .color-evidence { fill: #94a3b8; }
+      }
+    </style>
+
+  </defs>
+  <rect width="600" height="220" class="panel-bg" />
+  
+  <g transform="translate(25, 20)">
+    <!-- Header -->
+    <text x="0" y="15" class="panel-title">Q5 Bayes' Theorem Visual Model</text>
+    <text x="0" y="32" class="label-text">Risk Update Equation (Prior to Posterior)</text>
+    
+    <!-- Fraction Equation Box -->
+    <g transform="translate(0, 50)">
+      <rect width="550" height="85" class="highlight-box" style="stroke:#10b981; stroke-opacity:0.5;" />
+      
+      <!-- Posterior: P(Default | Score) -->
+      <text x="20" y="48" class="math-formula-large color-posterior">P(Default | Low Score)</text>
+      
+      <!-- Equals -->
+      <text x="225" y="48" class="math-formula-large">=</text>
+      
+      <!-- Numerator: Likelihood * Prior -->
+      <text x="390" y="36" text-anchor="middle" class="math-formula-large">
+        <tspan class="color-likelihood">P(Low Score | Default)</tspan>
+        <tspan fill="#475569"> · </tspan>
+        <tspan class="color-prior">P(Default)</tspan>
+      </text>
+      
+      <!-- Division Line -->
+      <line x1="245" y1="44" x2="535" y2="44" stroke="#475569" stroke-width="2" />
+      
+      <!-- Denominator: Marginal Evidence -->
+      <text x="390" y="65" text-anchor="middle" class="math-formula-large color-evidence">P(Low Score)</text>
+    </g>
+    
+    <!-- Color-Coded Explanations / Callouts -->
+    <g transform="translate(5, 150)">
+      <!-- Col 1: Posterior -->
+      <text x="0" y="12" class="sub-text color-posterior" style="font-weight:700;">Posterior Probability</text>
+      <text x="0" y="27" class="sub-text">P(A|B) ≈ 39.53%</text>
+      <text x="0" y="42" class="sub-text" style="font-size:9.5px;">Updated default probability</text>
+      
+      <!-- Col 2: Likelihood -->
+      <text x="160" y="12" class="sub-text color-likelihood" style="font-weight:700;">Likelihood</text>
+      <text x="160" y="27" class="sub-text">P(B|A) ≈ 36.72%</text>
+      <text x="160" y="42" class="sub-text" style="font-size:9.5px;">Default group score rate</text>
+      
+      <!-- Col 3: Prior -->
+      <text x="300" y="12" class="sub-text color-prior" style="font-weight:700;">Prior Baseline</text>
+      <text x="300" y="27" class="sub-text">P(Default) = 18.52%</text>
+      <text x="300" y="42" class="sub-text" style="font-size:9.5px;">Base risk of entire dataset</text>
+      
+      <!-- Col 4: Evidence -->
+      <text x="440" y="12" class="sub-text color-evidence" style="font-weight:700;">Marginal Evidence</text>
+      <text x="440" y="27" class="sub-text">P(Score) = 17.20%</text>
+      <text x="440" y="42" class="sub-text" style="font-size:9.5px;">Low score rate overall</text>
+    </g>
+  </g>
+</svg>

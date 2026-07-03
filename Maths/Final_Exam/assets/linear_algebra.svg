@@ -1,0 +1,196 @@
+<svg width="800" height="300" viewBox="0 0 800 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&amp;family=Space+Grotesk:wght@500;700&amp;display=swap');
+      
+      .panel-bg {
+        fill: #f8fafc;
+        stroke: #e2e8f0;
+        stroke-width: 1.5;
+        rx: 16px;
+      }
+      
+      .panel-title {
+        font-family: 'Space Grotesk', sans-serif;
+        font-weight: 700;
+        font-size: 13px;
+        letter-spacing: 1.5px;
+        fill: #475569;
+        text-transform: uppercase;
+      }
+      
+      .label-text {
+        font-family: 'Outfit', sans-serif;
+        font-weight: 600;
+        font-size: 12px;
+        fill: #0f172a;
+      }
+      
+      .sub-text {
+        font-family: 'Outfit', sans-serif;
+        font-weight: 400;
+        font-size: 11px;
+        fill: #64748b;
+      }
+      
+      .math-text {
+        font-family: 'Space Grotesk', sans-serif;
+        font-weight: 600;
+        font-size: 13px;
+        fill: #4f46e5;
+      }
+      
+      .axis-line {
+        stroke: #94a3b8;
+        stroke-width: 1.5;
+      }
+      
+      .grid-line {
+        stroke: #cbd5e1;
+        stroke-width: 1;
+        stroke-dasharray: 2 2;
+      }
+      
+      .vector-line-1 {
+        stroke: #6366f1;
+        stroke-width: 2.5;
+        stroke-linecap: round;
+      }
+      
+      .vector-line-2 {
+        stroke: #10b981;
+        stroke-width: 2.5;
+        stroke-linecap: round;
+      }
+      
+      @media (prefers-color-scheme: dark) {
+        .panel-bg {
+          fill: #0f172a;
+          stroke: #1e293b;
+        }
+        .panel-title {
+          fill: #94a3b8;
+        }
+        .label-text {
+          fill: #f8fafc;
+        }
+        .sub-text {
+          fill: #64748b;
+        }
+        .math-text {
+          fill: #818cf8;
+        }
+        .axis-line {
+          stroke: #475569;
+        }
+        .grid-line {
+          stroke: #334155;
+        }
+      }
+    </style>
+    
+    <marker id="vector-arrow-blue" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#6366f1" />
+    </marker>
+    <marker id="vector-arrow-green" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#10b981" />
+    </marker>
+  </defs>
+
+  <!-- Panel 1: STUDENT SCORE VECTORS -->
+  <g transform="translate(15, 15)">
+    <rect width="240" height="270" class="panel-bg" />
+    <text x="120" y="35" text-anchor="middle" class="panel-title">1. Linear Algebra</text>
+    <text x="120" y="55" text-anchor="middle" class="label-text">Financial Customer Vectors</text>
+    
+    <!-- Vector Graph -->
+    <g transform="translate(30, 75)">
+      <!-- Grid -->
+      <line x1="0" y1="30" x2="180" y2="30" class="grid-line" />
+      <line x1="0" y1="60" x2="180" y2="60" class="grid-line" />
+      <line x1="0" y1="90" x2="180" y2="90" class="grid-line" />
+      <line x1="0" y1="120" x2="180" y2="120" class="grid-line" />
+      
+      <line x1="45" y1="0" x2="45" y2="140" class="grid-line" />
+      <line x1="90" y1="0" x2="90" y2="140" class="grid-line" />
+      <line x1="135" y1="0" x2="135" y2="140" class="grid-line" />
+      
+      <!-- Axes -->
+      <line x1="0" y1="140" x2="180" y2="140" class="axis-line" />
+      <line x1="0" y1="0" x2="0" y2="140" class="axis-line" />
+      
+      <!-- Vectors -->
+      <!-- v1 = [Income, Loan_Amount] normalized, e.g., points to (120, 30) (origin is (0, 140)) -->
+      <line x1="0" y1="140" x2="110" y2="40" class="vector-line-1" marker-end="url(#vector-arrow-blue)" />
+      <!-- v2 = normalized v2 points to (140, 75) -->
+      <line x1="0" y1="140" x2="140" y2="70" class="vector-line-2" marker-end="url(#vector-arrow-green)" />
+      
+      <!-- Labels -->
+      <text x="115" y="32" fill="#6366f1" font-family="'Space Grotesk', sans-serif" font-size="9" font-weight="700">v₁ = Customer 1</text>
+      <text x="145" y="80" fill="#10b981" font-family="'Space Grotesk', sans-serif" font-size="9" font-weight="700">v₂ = Customer 2</text>
+      
+      <text x="180" y="152" text-anchor="end" class="sub-text" style="font-size:9px;">Income</text>
+      <text x="-5" y="-5" class="sub-text" style="font-size:9px;">Loan Amt</text>
+    </g>
+    
+    <text x="120" y="248" text-anchor="middle" class="sub-text">Vectors represent numerical profiles</text>
+  </g>
+
+  <!-- Panel 2: VECTOR ANGLES -->
+  <g transform="translate(280, 15)">
+    <rect width="240" height="270" class="panel-bg" />
+    <text x="120" y="35" text-anchor="middle" class="panel-title">2. Cosine Similarity</text>
+    <text x="120" y="55" text-anchor="middle" class="label-text">Angle Between Customer Profiles</text>
+    
+    <!-- Angle Graph -->
+    <g transform="translate(40, 80)">
+      <line x1="0" y1="120" x2="160" y2="120" class="axis-line" />
+      <line x1="0" y1="20" x2="0" y2="120" class="axis-line" />
+      
+      <!-- Vectors -->
+      <line x1="0" y1="120" x2="130" y2="40" class="vector-line-1" marker-end="url(#vector-arrow-blue)" />
+      <line x1="0" y1="120" x2="140" y2="80" class="vector-line-2" marker-end="url(#vector-arrow-green)" />
+      
+      <!-- Angle Arc -->
+      <!-- Center (0, 120), radius 35. Arc from angle ~31 deg to ~16 deg -->
+      <path d="M 32 104 A 35 35 0 0 0 30 111" fill="none" stroke="#e11d48" stroke-width="1.5" />
+      <text x="38" y="112" fill="#e11d48" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="10">θ</text>
+      
+      <!-- Text labels -->
+      <text x="125" y="32" fill="#6366f1" font-family="'Space Grotesk', sans-serif" font-size="9" font-weight="600">v₁</text>
+      <text x="145" y="75" fill="#10b981" font-family="'Space Grotesk', sans-serif" font-size="9" font-weight="600">v₂</text>
+      
+      <!-- Formula -->
+      <text x="80" y="145" text-anchor="middle" class="sub-text" style="font-weight: 600;">θ = 15.62° (High Similarity)</text>
+    </g>
+    
+    <text x="120" y="248" text-anchor="middle" class="sub-text">Small angle = very similar borrowers</text>
+  </g>
+
+  <!-- Panel 3: FORMULAS & EIGENVALUES -->
+  <g transform="translate(545, 15)">
+    <rect width="240" height="270" class="panel-bg" />
+    <text x="120" y="35" text-anchor="middle" class="panel-title">3. Eigen Analysis</text>
+    <text x="120" y="55" text-anchor="middle" class="label-text">Eigenvalues &amp; PCA</text>
+    
+    <!-- Formulas -->
+    <g transform="translate(20, 75)">
+      <!-- Cosine Similarity Formula -->
+      <rect width="200" height="55" rx="8" fill="#e0e7ff" fill-opacity="0.5" />
+      <text x="10" y="20" class="sub-text" style="font-weight:600; fill:#4f46e5;">Cosine Similarity:</text>
+      <text x="10" y="42" class="math-text">cos(θ) = (v₁ · v₂) / (||v₁|| ||v₂||)</text>
+      
+      <!-- Eigenvalue Equation -->
+      <rect y="70" width="200" height="75" rx="8" fill="#e2f5ea" fill-opacity="0.5" />
+      <text x="10" y="90" class="sub-text" style="font-weight:600; fill:#059669;">Eigenvector Equation:</text>
+      <text x="10" y="117" class="math-text" fill="#059669">A · v = λ · v</text>
+      <text x="10" y="137" class="sub-text" style="font-size:9px; fill:#059669;">v: Eigenvector | λ: Eigenvalue</text>
+    </g>
+    
+    <!-- Application note -->
+    <rect x="20" y="235" width="200" height="20" rx="4" fill="#f1f5f9" />
+    <text x="120" y="248" text-anchor="middle" class="sub-text" style="font-size:9px; font-weight:600;">Powers PCA (Dimensionality Reduction)</text>
+    
+    <text x="120" y="222" text-anchor="middle" class="sub-text">Captures principal axes of variation</text>
+  </g>
+</svg>

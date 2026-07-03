@@ -1,0 +1,252 @@
+<svg width="800" height="300" viewBox="0 0 800 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&amp;family=Space+Grotesk:wght@500;700&amp;display=swap');
+      
+      .panel-bg {
+        fill: #f8fafc;
+        stroke: #e2e8f0;
+        stroke-width: 1.5;
+        rx: 16px;
+        transition: all 0.3s ease;
+      }
+      
+      .panel-title {
+        font-family: 'Space Grotesk', sans-serif;
+        font-weight: 700;
+        font-size: 13px;
+        letter-spacing: 1.5px;
+        fill: #475569;
+        text-transform: uppercase;
+      }
+      
+      .label-text {
+        font-family: 'Outfit', sans-serif;
+        font-weight: 600;
+        font-size: 12px;
+        fill: #0f172a;
+      }
+      
+      .sub-text {
+        font-family: 'Outfit', sans-serif;
+        font-weight: 400;
+        font-size: 11px;
+        fill: #64748b;
+      }
+      
+      .math-text {
+        font-family: 'Space Grotesk', sans-serif;
+        font-weight: 600;
+        font-size: 13px;
+        fill: #4f46e5;
+      }
+      
+      .graphic-stroke {
+        stroke: #6366f1;
+        stroke-width: 2.5;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        fill: none;
+      }
+      
+      .accent-stroke {
+        stroke: #10b981;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        fill: none;
+      }
+      
+      .axis-line {
+        stroke: #94a3b8;
+        stroke-width: 1.5;
+        stroke-linecap: round;
+      }
+      
+      .grid-line {
+        stroke: #e2e8f0;
+        stroke-width: 1;
+        stroke-dasharray: 3 3;
+      }
+
+      .shaded-area-68 {
+        fill: #6366f1;
+        fill-opacity: 0.15;
+      }
+
+      .shaded-area-95 {
+        fill: #10b981;
+        fill-opacity: 0.1;
+      }
+      
+      @media (prefers-color-scheme: dark) {
+        .panel-bg {
+          fill: #0f172a;
+          stroke: #1e293b;
+        }
+        .panel-title {
+          fill: #94a3b8;
+        }
+        .label-text {
+          fill: #f8fafc;
+        }
+        .sub-text {
+          fill: #64748b;
+        }
+        .math-text {
+          fill: #818cf8;
+        }
+        .axis-line {
+          stroke: #475569;
+        }
+        .grid-line {
+          stroke: #334155;
+        }
+        .shaded-area-68 {
+          fill: #818cf8;
+          fill-opacity: 0.2;
+        }
+        .shaded-area-95 {
+          fill: #34d399;
+          fill-opacity: 0.15;
+        }
+      }
+    </style>
+    
+    <linearGradient id="panel-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#f8fafc" />
+    </linearGradient>
+    
+    <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8" />
+    </marker>
+    
+    <marker id="arrow-blue" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 2 L 8 5 L 0 8 z" fill="#6366f1" />
+    </marker>
+    
+    <marker id="arrow-green" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M 0 2 L 8 5 L 0 8 z" fill="#10b981" />
+    </marker>
+  </defs>
+
+  <!-- Panel 1: MEAN & CENTRAL TENDENCY -->
+  <g transform="translate(15, 15)">
+    <rect width="240" height="270" class="panel-bg" />
+    <text x="120" y="35" text-anchor="middle" class="panel-title">1. Descriptive Statistics</text>
+    <text x="120" y="55" text-anchor="middle" class="label-text">Mean (Average) as Balance Point</text>
+    
+    <!-- Balance Scale Graphic -->
+    <!-- Pivot Stand -->
+    <path d="M 120 160 L 105 220 L 135 220 Z" fill="#94a3b8" fill-opacity="0.3" stroke="#94a3b8" stroke-width="1.5" stroke-linejoin="round" />
+    <circle cx="120" cy="160" r="4" fill="#475569" />
+    
+    <!-- Base Line -->
+    <line x1="80" y1="220" x2="160" y2="220" stroke="#475569" stroke-width="3" stroke-linecap="round" />
+    
+    <!-- Tilted Beam (Balanced here) -->
+    <line x1="60" y1="160" x2="180" y2="160" stroke="#6366f1" stroke-width="3" stroke-linecap="round" />
+    
+    <!-- Left Pan -->
+    <line x1="60" y1="160" x2="45" y2="195" stroke="#94a3b8" stroke-width="1" />
+    <line x1="60" y1="160" x2="75" y2="195" stroke="#94a3b8" stroke-width="1" />
+    <path d="M 40 195 L 80 195" stroke="#6366f1" stroke-width="2" stroke-linecap="round" />
+    <!-- Left Weights -->
+    <circle cx="50" cy="188" r="5" fill="#6366f1" />
+    <circle cx="60" cy="188" r="5" fill="#6366f1" />
+    <circle cx="70" cy="188" r="5" fill="#6366f1" />
+    <circle cx="55" cy="179" r="5" fill="#6366f1" />
+    <circle cx="65" cy="179" r="5" fill="#6366f1" />
+    
+    <!-- Right Pan -->
+    <line x1="180" y1="160" x2="165" y2="195" stroke="#94a3b8" stroke-width="1" />
+    <line x1="180" y1="160" x2="195" y2="195" stroke="#94a3b8" stroke-width="1" />
+    <path d="M 160 195 L 200 195" stroke="#6366f1" stroke-width="2" stroke-linecap="round" />
+    <!-- Right Weights -->
+    <circle cx="170" cy="188" r="5" fill="#6366f1" />
+    <circle cx="180" cy="188" r="5" fill="#6366f1" />
+    <circle cx="190" cy="188" r="5" fill="#6366f1" />
+    <circle cx="175" cy="179" r="5" fill="#6366f1" />
+    <circle cx="185" cy="179" r="5" fill="#6366f1" />
+    
+    <!-- Formula -->
+    <rect x="50" y="75" width="140" height="35" rx="8" fill="#e0e7ff" fill-opacity="0.5" />
+    <text x="120" y="97" text-anchor="middle" class="math-text">x̄ = Σx / N</text>
+    
+    <text x="120" y="248" text-anchor="middle" class="sub-text">Mean Income ≈ ₹69,418</text>
+  </g>
+
+  <!-- Panel 2: STANDARD DEVIATION -->
+  <g transform="translate(280, 15)">
+    <rect width="240" height="270" class="panel-bg" />
+    <text x="120" y="35" text-anchor="middle" class="panel-title">2. Spread &amp; Dispersion</text>
+    <text x="120" y="55" text-anchor="middle" class="label-text">Standard Deviation &amp; Variance</text>
+    
+    <!-- Normal Curve with σ bounds -->
+    <!-- Grid/Axes -->
+    <line x1="30" y1="210" x2="210" y2="210" class="axis-line" />
+    
+    <!-- Shaded Sigma Region -->
+    <path d="M 85 210 C 105 210 110 145 120 145 C 130 145 135 210 155 210 Z" class="shaded-area-68" />
+    
+    <!-- Curve -->
+    <path d="M 40 210 C 70 210 90 130 120 130 C 150 130 170 210 200 210" class="graphic-stroke" />
+    
+    <!-- Mean Line -->
+    <line x1="120" y1="130" x2="120" y2="210" class="grid-line" />
+    <text x="120" y="225" text-anchor="middle" class="sub-text">μ (Mean)</text>
+    
+    <!-- Std Dev Indicator -->
+    <line x1="85" y1="180" x2="155" y2="180" stroke="#10b981" stroke-width="1.5" marker-start="url(#arrow-green)" marker-end="url(#arrow-green)" />
+    <text x="120" y="174" text-anchor="middle" class="sub-text" fill="#10b981" style="font-weight: 600;">2σ (Spread)</text>
+    
+    <line x1="85" y1="180" x2="85" y2="210" class="grid-line" />
+    <line x1="155" y1="180" x2="155" y2="210" class="grid-line" />
+    
+    <text x="75" y="225" text-anchor="middle" class="sub-text">-σ</text>
+    <text x="165" y="225" text-anchor="middle" class="sub-text">+σ</text>
+    
+    <!-- Formula -->
+    <rect x="40" y="75" width="160" height="35" rx="8" fill="#e2f5ea" fill-opacity="0.5" />
+    <text x="120" y="97" text-anchor="middle" class="math-text" fill="#10b981">σ = √[Σ(x-μ)² / N]</text>
+    
+    <text x="120" y="248" text-anchor="middle" class="sub-text">Std Dev (σ) ≈ ₹27,753.30</text>
+  </g>
+
+  <!-- Panel 3: BELL CURVE (EMPIRICAL RULE) -->
+  <g transform="translate(545, 15)">
+    <rect width="240" height="270" class="panel-bg" />
+    <text x="120" y="35" text-anchor="middle" class="panel-title">3. Normal Distribution</text>
+    <text x="120" y="55" text-anchor="middle" class="label-text">The Empirical Rule (68-95-99.7)</text>
+    
+    <!-- Curve -->
+    <line x1="20" y1="210" x2="220" y2="210" class="axis-line" />
+    
+    <!-- Shaded Regions -->
+    <path d="M 50 210 C 75 210 85 145 120 145 C 155 145 165 210 190 210 Z" class="shaded-area-95" />
+    <path d="M 85 210 C 100 210 105 145 120 145 C 135 145 140 210 155 210 Z" class="shaded-area-68" />
+    
+    <path d="M 30 210 C 65 210 85 130 120 130 C 155 130 175 210 210 210" class="graphic-stroke" />
+    
+    <!-- Mean line -->
+    <line x1="120" y1="130" x2="120" y2="210" class="grid-line" />
+    
+    <!-- Brackets/Labels -->
+    <!-- 68% between -1 and +1 -->
+    <line x1="85" y1="150" x2="155" y2="150" stroke="#6366f1" stroke-width="1.5" />
+    <line x1="85" y1="147" x2="85" y2="153" stroke="#6366f1" stroke-width="1.5" />
+    <line x1="155" y1="147" x2="155" y2="153" stroke="#6366f1" stroke-width="1.5" />
+    <rect x="105" y="140" width="30" height="18" rx="4" fill="#6366f1" />
+    <text x="120" y="153" text-anchor="middle" fill="#ffffff" font-family="'Space Grotesk', sans-serif" font-size="10" font-weight="700">68%</text>
+    
+    <!-- 95% between -2 and +2 -->
+    <line x1="50" y1="180" x2="190" y2="180" stroke="#10b981" stroke-width="1.5" />
+    <line x1="50" y1="177" x2="50" y2="183" stroke="#10b981" stroke-width="1.5" />
+    <line x1="190" y1="177" x2="190" y2="183" stroke="#10b981" stroke-width="1.5" />
+    <rect x="105" y="171" width="30" height="18" rx="4" fill="#10b981" />
+    <text x="120" y="184" text-anchor="middle" fill="#ffffff" font-family="'Space Grotesk', sans-serif" font-size="10" font-weight="700">95%</text>
+    
+    <text x="120" y="248" text-anchor="middle" class="sub-text">Income fits standard normal distribution</text>
+  </g>
+</svg>

@@ -1,0 +1,164 @@
+<svg width="600" height="200" viewBox="0 0 600 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&amp;family=Space+Grotesk:wght@500;700&amp;display=swap');
+      
+      .panel-bg {
+        fill: #f8fafc;
+        stroke: #e2e8f0;
+        stroke-width: 1.5;
+        rx: 12px;
+      }
+      
+      .panel-title {
+        font-family: 'Space Grotesk', sans-serif;
+        font-weight: 700;
+        font-size: 11px;
+        letter-spacing: 1px;
+        fill: #475569;
+        text-transform: uppercase;
+      }
+      
+      .label-text {
+        font-family: 'Outfit', sans-serif;
+        font-weight: 700;
+        font-size: 14px;
+        fill: #0f172a;
+      }
+      
+      .sub-text {
+        font-family: 'Outfit', sans-serif;
+        font-weight: 500;
+        font-size: 11px;
+        fill: #475569;
+      }
+      
+      .math-text {
+        font-family: 'Space Grotesk', sans-serif;
+        font-weight: 700;
+        font-size: 14px;
+        fill: #1e1b4b; /* Deep high-contrast blue for light mode */
+      }
+      
+      .math-formula-large {
+        font-family: 'Space Grotesk', sans-serif;
+        font-weight: 700;
+        font-size: 18px;
+        fill: #1e1b4b;
+      }
+      
+      .graphic-stroke {
+        stroke: #4f46e5;
+        stroke-width: 2.5;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        fill: none;
+      }
+      
+      .accent-stroke {
+        stroke: #10b981;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        fill: none;
+      }
+      
+      .axis-line {
+        stroke: #475569;
+        stroke-width: 1.5;
+        stroke-linecap: round;
+      }
+      
+      .grid-line {
+        stroke: #cbd5e1;
+        stroke-width: 1;
+        stroke-dasharray: 2 2;
+      }
+      
+      .highlight-box {
+        fill: #f1f5f9;
+        stroke: #cbd5e1;
+        stroke-width: 1;
+        rx: 6px;
+      }
+
+      /* Color-coding for Bayes Theorem */
+      .color-posterior { fill: #e11d48; } /* Rose */
+      .color-likelihood { fill: #4f46e5; } /* Indigo */
+      .color-prior { fill: #059669; } /* Emerald */
+      .color-evidence { fill: #475569; } /* Slate */
+
+      @media (prefers-color-scheme: dark) {
+        .panel-bg {
+          fill: #0f172a;
+          stroke: #1e293b;
+        }
+        .panel-title {
+          fill: #94a3b8;
+        }
+        .label-text {
+          fill: #f8fafc;
+        }
+        .sub-text {
+          fill: #94a3b8;
+        }
+        .math-text {
+          fill: #ffffff; /* Crisp white for dark mode */
+        }
+        .math-formula-large {
+          fill: #ffffff;
+        }
+        .axis-line {
+          stroke: #475569;
+        }
+        .grid-line {
+          stroke: #334155;
+        }
+        .highlight-box {
+          fill: #1e293b;
+          stroke: #334155;
+        }
+        .color-posterior { fill: #fb7185; }
+        .color-likelihood { fill: #818cf8; }
+        .color-prior { fill: #34d399; }
+        .color-evidence { fill: #94a3b8; }
+      }
+    </style>
+
+  </defs>
+  <rect width="600" height="200" class="panel-bg" />
+  
+  <!-- Left Side: Discrete -->
+  <g transform="translate(30, 20)">
+    <text x="0" y="20" class="panel-title">Discrete Random Variable</text>
+    <text x="0" y="40" class="label-text">Default Status (0 or 1)</text>
+    
+    <line x1="20" y1="130" x2="200" y2="130" class="axis-line" />
+    
+    <!-- Countable bar pillars representing 0 and 1 -->
+    <rect x="60" y="70" width="20" height="60" fill="#4f46e5" rx="2" />
+    <rect x="140" y="100" width="20" height="30" fill="#4f46e5" rx="2" />
+    
+    <text x="70" y="145" text-anchor="middle" class="sub-text">Paid (0)</text>
+    <text x="150" y="145" text-anchor="middle" class="sub-text">Default (1)</text>
+    <text x="110" y="168" text-anchor="middle" class="sub-text" style="font-weight: 600;">Finite Countable Outcomes</text>
+  </g>
+  
+  <!-- Right Side: Continuous -->
+  <g transform="translate(330, 20)">
+    <text x="0" y="20" class="panel-title">Continuous Random Variable</text>
+    <text x="0" y="40" class="label-text">Customer Income (Y)</text>
+    
+    <line x1="20" y1="130" x2="220" y2="130" class="axis-line" />
+    
+    <!-- Continuous Curve representing PDF -->
+    <path d="M 30 130 C 70 130 90 60 120 60 C 150 60 170 130 210 130" class="graphic-stroke" stroke="#10b981" />
+    
+    <!-- Fill under curve -->
+    <path d="M 30 130 C 70 130 90 60 120 60 C 150 60 170 130 210 130 Z" fill="#10b981" fill-opacity="0.1" />
+    
+    <text x="120" y="145" text-anchor="middle" class="sub-text">Income Value (₹)</text>
+    <text x="120" y="168" text-anchor="middle" class="sub-text" style="font-weight: 600;">Infinite Uncountable Outcomes</text>
+  </g>
+</svg>

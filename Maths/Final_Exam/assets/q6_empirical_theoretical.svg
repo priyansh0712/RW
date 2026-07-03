@@ -1,0 +1,184 @@
+<svg width="600" height="200" viewBox="0 0 600 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&amp;family=Space+Grotesk:wght@500;700&amp;display=swap');
+      
+      .panel-bg {
+        fill: #f8fafc;
+        stroke: #e2e8f0;
+        stroke-width: 1.5;
+        rx: 12px;
+      }
+      
+      .panel-title {
+        font-family: 'Space Grotesk', sans-serif;
+        font-weight: 700;
+        font-size: 11px;
+        letter-spacing: 1px;
+        fill: #475569;
+        text-transform: uppercase;
+      }
+      
+      .label-text {
+        font-family: 'Outfit', sans-serif;
+        font-weight: 700;
+        font-size: 14px;
+        fill: #0f172a;
+      }
+      
+      .sub-text {
+        font-family: 'Outfit', sans-serif;
+        font-weight: 500;
+        font-size: 11px;
+        fill: #475569;
+      }
+      
+      .math-text {
+        font-family: 'Space Grotesk', sans-serif;
+        font-weight: 700;
+        font-size: 14px;
+        fill: #1e1b4b; /* Deep high-contrast blue for light mode */
+      }
+      
+      .math-formula-large {
+        font-family: 'Space Grotesk', sans-serif;
+        font-weight: 700;
+        font-size: 18px;
+        fill: #1e1b4b;
+      }
+      
+      .graphic-stroke {
+        stroke: #4f46e5;
+        stroke-width: 2.5;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        fill: none;
+      }
+      
+      .accent-stroke {
+        stroke: #10b981;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        fill: none;
+      }
+      
+      .axis-line {
+        stroke: #475569;
+        stroke-width: 1.5;
+        stroke-linecap: round;
+      }
+      
+      .grid-line {
+        stroke: #cbd5e1;
+        stroke-width: 1;
+        stroke-dasharray: 2 2;
+      }
+      
+      .highlight-box {
+        fill: #f1f5f9;
+        stroke: #cbd5e1;
+        stroke-width: 1;
+        rx: 6px;
+      }
+
+      /* Color-coding for Bayes Theorem */
+      .color-posterior { fill: #e11d48; } /* Rose */
+      .color-likelihood { fill: #4f46e5; } /* Indigo */
+      .color-prior { fill: #059669; } /* Emerald */
+      .color-evidence { fill: #475569; } /* Slate */
+
+      @media (prefers-color-scheme: dark) {
+        .panel-bg {
+          fill: #0f172a;
+          stroke: #1e293b;
+        }
+        .panel-title {
+          fill: #94a3b8;
+        }
+        .label-text {
+          fill: #f8fafc;
+        }
+        .sub-text {
+          fill: #94a3b8;
+        }
+        .math-text {
+          fill: #ffffff; /* Crisp white for dark mode */
+        }
+        .math-formula-large {
+          fill: #ffffff;
+        }
+        .axis-line {
+          stroke: #475569;
+        }
+        .grid-line {
+          stroke: #334155;
+        }
+        .highlight-box {
+          fill: #1e293b;
+          stroke: #334155;
+        }
+        .color-posterior { fill: #fb7185; }
+        .color-likelihood { fill: #818cf8; }
+        .color-prior { fill: #34d399; }
+        .color-evidence { fill: #94a3b8; }
+      }
+    </style>
+
+    <style>
+      .divider-vertical {
+        stroke: #cbd5e1;
+        stroke-width: 1.5;
+      }
+      @media (prefers-color-scheme: dark) {
+        .divider-vertical {
+          stroke: #334155;
+        }
+      }
+    </style>
+  </defs>
+  <rect width="600" height="200" class="panel-bg" />
+  
+  <!-- Left Column: Theoretical -->
+  <g transform="translate(30, 20)">
+    <text x="0" y="20" class="panel-title">1. Theoretical Probability</text>
+    <text x="0" y="40" class="label-text">Based on Mathematical Reasoning</text>
+    
+    <!-- Spinner/Coin Flip Diagram -->
+    <circle cx="50" cy="115" r="30" fill="none" stroke="#4f46e5" stroke-width="2" />
+    <path d="M 50 115 L 50 85" stroke="#4f46e5" stroke-width="2" stroke-linecap="round" />
+    <path d="M 50 115 L 75 130" stroke="#4f46e5" stroke-width="2" stroke-linecap="round" />
+    <circle cx="50" cy="115" r="4" fill="#4f46e5" />
+    
+    <g transform="translate(100, 95)">
+      <text x="0" y="12" class="sub-text" style="font-weight:600;">Coin Toss Example:</text>
+      <text x="0" y="30" class="math-text">P(Heads) = 1/2 = 0.50</text>
+    </g>
+    
+    <text x="0" y="168" class="sub-text">Assumes ideal symmetry &amp; conditions</text>
+  </g>
+  
+  <!-- Divider -->
+  <line x1="300" y1="30" x2="300" y2="170" class="divider-vertical" />
+  
+  <!-- Right Column: Empirical -->
+  <g transform="translate(330, 20)">
+    <text x="0" y="20" class="panel-title">2. Empirical Probability</text>
+    <text x="0" y="40" class="label-text">Based on Observed Data</text>
+    
+    <!-- Database Table Icon -->
+    <rect x="20" y="90" width="50" height="45" rx="4" fill="none" stroke="#10b981" stroke-width="2" />
+    <line x1="20" y1="102" x2="70" y2="102" stroke="#10b981" stroke-width="1.5" />
+    <line x1="20" y1="114" x2="70" y2="114" stroke="#10b981" stroke-width="1.5" />
+    <circle cx="30" cy="96" r="2" fill="#10b981" />
+    <circle cx="40" cy="96" r="2" fill="#10b981" />
+    
+    <g transform="translate(85, 95)">
+      <text x="0" y="12" class="sub-text" style="font-weight:600;">Loan Dataset Example:</text>
+      <text x="0" y="30" class="math-text">P(Default) = 926 / 5000 = 18.52%</text>
+    </g>
+    
+    <text x="0" y="168" class="sub-text">Based on historical observations</text>
+  </g>
+</svg>

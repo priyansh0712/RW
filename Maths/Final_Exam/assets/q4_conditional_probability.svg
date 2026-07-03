@@ -1,0 +1,200 @@
+<svg width="600" height="200" viewBox="0 0 600 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&amp;family=Space+Grotesk:wght@500;700&amp;display=swap');
+      
+      .panel-bg {
+        fill: #f8fafc;
+        stroke: #e2e8f0;
+        stroke-width: 1.5;
+        rx: 12px;
+      }
+      
+      .panel-title {
+        font-family: 'Space Grotesk', sans-serif;
+        font-weight: 700;
+        font-size: 11px;
+        letter-spacing: 1px;
+        fill: #475569;
+        text-transform: uppercase;
+      }
+      
+      .label-text {
+        font-family: 'Outfit', sans-serif;
+        font-weight: 700;
+        font-size: 14px;
+        fill: #0f172a;
+      }
+      
+      .sub-text {
+        font-family: 'Outfit', sans-serif;
+        font-weight: 500;
+        font-size: 11px;
+        fill: #475569;
+      }
+      
+      .math-text {
+        font-family: 'Space Grotesk', sans-serif;
+        font-weight: 700;
+        font-size: 14px;
+        fill: #1e1b4b; /* Deep high-contrast blue for light mode */
+      }
+      
+      .math-formula-large {
+        font-family: 'Space Grotesk', sans-serif;
+        font-weight: 700;
+        font-size: 18px;
+        fill: #1e1b4b;
+      }
+      
+      .graphic-stroke {
+        stroke: #4f46e5;
+        stroke-width: 2.5;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        fill: none;
+      }
+      
+      .accent-stroke {
+        stroke: #10b981;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        fill: none;
+      }
+      
+      .axis-line {
+        stroke: #475569;
+        stroke-width: 1.5;
+        stroke-linecap: round;
+      }
+      
+      .grid-line {
+        stroke: #cbd5e1;
+        stroke-width: 1;
+        stroke-dasharray: 2 2;
+      }
+      
+      .highlight-box {
+        fill: #f1f5f9;
+        stroke: #cbd5e1;
+        stroke-width: 1;
+        rx: 6px;
+      }
+
+      /* Color-coding for Bayes Theorem */
+      .color-posterior { fill: #e11d48; } /* Rose */
+      .color-likelihood { fill: #4f46e5; } /* Indigo */
+      .color-prior { fill: #059669; } /* Emerald */
+      .color-evidence { fill: #475569; } /* Slate */
+
+      @media (prefers-color-scheme: dark) {
+        .panel-bg {
+          fill: #0f172a;
+          stroke: #1e293b;
+        }
+        .panel-title {
+          fill: #94a3b8;
+        }
+        .label-text {
+          fill: #f8fafc;
+        }
+        .sub-text {
+          fill: #94a3b8;
+        }
+        .math-text {
+          fill: #ffffff; /* Crisp white for dark mode */
+        }
+        .math-formula-large {
+          fill: #ffffff;
+        }
+        .axis-line {
+          stroke: #475569;
+        }
+        .grid-line {
+          stroke: #334155;
+        }
+        .highlight-box {
+          fill: #1e293b;
+          stroke: #334155;
+        }
+        .color-posterior { fill: #fb7185; }
+        .color-likelihood { fill: #818cf8; }
+        .color-prior { fill: #34d399; }
+        .color-evidence { fill: #94a3b8; }
+      }
+    </style>
+
+  </defs>
+  <rect width="600" height="200" class="panel-bg" />
+  
+  <!-- Left Side: Venn Diagram highlighting B as the new restricted space -->
+  <g transform="translate(20, 20)">
+    <text x="0" y="15" class="panel-title">1. Restricted Sample Space</text>
+    <text x="0" y="32" class="label-text">Given Condition (Event B)</text>
+    
+    <!-- Universe Box -->
+    <rect x="0" y="50" width="220" height="110" rx="8" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="3 3" fill="none" />
+    <text x="210" y="65" text-anchor="end" class="sub-text" style="font-size:9px;">Universe S</text>
+
+    <!-- Overlapping Circles -->
+    <!-- Event A (Default) -->
+    <circle cx="85" cy="105" r="38" fill="#4f46e5" fill-opacity="0.1" stroke="#4f46e5" stroke-width="1.5" />
+    
+    <!-- Event B (Low Credit Score) -> HIGHLIGHTED & BOLD to show condition -->
+    <circle cx="135" cy="105" r="38" fill="#10b981" fill-opacity="0.25" stroke="#10b981" stroke-width="2.5" stroke-dasharray="4 2" />
+    
+    <!-- Labels -->
+    <text x="65" y="108" fill="#4f46e5" font-family="'Outfit', sans-serif" font-weight="700" font-size="11" text-anchor="middle">Default A</text>
+    <text x="155" y="108" fill="#059669" font-family="'Outfit', sans-serif" font-weight="800" font-size="11" text-anchor="middle">Score &lt; 600 (B)</text>
+    
+    <!-- Intersection A and B -->
+    <path d="M 110 77 A 38 38 0 0 1 123 105 A 38 38 0 0 1 110 133 A 38 38 0 0 1 97 105 A 38 38 0 0 1 110 77 Z" fill="#7c3aed" fill-opacity="0.4" />
+    <text x="110" y="108" fill="#ffffff" font-family="'Outfit', sans-serif" font-weight="800" font-size="9" text-anchor="middle">A ∩ B</text>
+    
+    <text x="110" y="173" text-anchor="middle" class="sub-text" style="font-size:9.5px; font-weight:700; fill:#059669;">Sample space shrinks from S to B</text>
+  </g>
+  
+  <!-- Right Side: Real Math Fraction Layout -->
+  <g transform="translate(260, 20)">
+    <text x="0" y="15" class="panel-title">2. Mathematical Representation</text>
+    
+    <!-- Formula Box -->
+    <g transform="translate(0, 28)">
+      <rect width="310" height="60" class="highlight-box" />
+      
+      <!-- Fraction Formula -->
+      <text x="15" y="34" class="math-text">Conditional Probability:</text>
+      
+      <!-- P(A|B) -->
+      <text x="180" y="35" text-anchor="end" class="math-text" style="font-size: 15px;">P(A | B) =</text>
+      
+      <!-- Fraction Numerator -->
+      <text x="245" y="25" text-anchor="middle" class="math-text" style="font-size: 13px;">P(A ∩ B)</text>
+      <!-- Fraction Line -->
+      <line x1="195" y1="31" x2="295" y2="31" stroke="#1e1b4b" stroke-width="1.5" class="axis-line" />
+      <!-- Fraction Denominator -->
+      <text x="245" y="47" text-anchor="middle" class="math-text" style="font-size: 13px;">P(B)</text>
+    </g>
+
+    <!-- Calculation Box -->
+    <g transform="translate(0, 100)">
+      <!-- Plugged-in value fraction -->
+      <!-- Left side text -->
+      <text x="0" y="33" class="math-text" style="font-size: 12px; fill:#e11d48;">P(Default | Low Score) =</text>
+      
+      <!-- Numerator -->
+      <text x="200" y="22" text-anchor="middle" class="math-text" style="font-size: 13px; fill:#e11d48;">340</text>
+      <!-- Line -->
+      <line x1="180" y1="28" x2="220" y2="28" stroke="#e11d48" stroke-width="1.5" />
+      <!-- Denominator -->
+      <text x="200" y="44" text-anchor="middle" class="math-text" style="font-size: 13px; fill:#e11d48;">860</text>
+      
+      <!-- Equal Sign and Result -->
+      <text x="235" y="33" class="math-text" style="font-size: 14px; fill:#e11d48;">≈ 39.53%</text>
+    </g>
+    
+    <text x="0" y="173" class="sub-text">Default rate doubles for Low Scores (Baseline: 18.52%)</text>
+  </g>
+</svg>
