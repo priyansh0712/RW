@@ -1,0 +1,12 @@
+CustomerID,Name,Age,Gender,City,Income,Purchases,Churn
+C101,Rohan Patel,24.0,Male,Ahmedabad,45000.0,8,No
+C102,Neha Shah,29.0,Female,Surat,62000.0,15,No
+C103,Amit Joshi,35.0,Male,Rajkot,78000.0,20,Yes
+C104,Priya Mehta,27.0,Female,Vadodara,55000.0,11,No
+C105,Karan Desai,41.0,Male,Ahmedabad,98000.0,25,Yes
+C106,Sneha Trivedi,31.0,Female,Bhavnagar,,14,No
+C107,Yash Parmar,22.0,Male,Surat,38000.0,5,No
+C108,Dhruvi Patel,26.0,Female,Rajkot,51000.0,9,No
+C109,Harsh Rana,38.0,Male,Jamnagar,87000.0,21,Yes
+C110,Mihika Shah,,Female,Ahmedabad,47000.0,7,No
+C102,Neha Shah,29.0,Female,Surat,62000.0,15,No

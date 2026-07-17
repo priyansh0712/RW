@@ -1,0 +1,74 @@
+[
+    {
+        "EmployeeID": "E201",
+        "Name": "Rahul Verma",
+        "Department": "HR",
+        "Age": 30,
+        "Salary": 48000,
+        "Experience": 5,
+        "City": "Pune"
+    },
+    {
+        "EmployeeID": "E202",
+        "Name": "Anjali Nair",
+        "Department": "IT",
+        "Age": 26,
+        "Salary": 65000,
+        "Experience": 3,
+        "City": "Bengaluru"
+    },
+    {
+        "EmployeeID": "E203",
+        "Name": "Vikas Singh",
+        "Department": "Sales",
+        "Age": 34,
+        "Salary": 72000,
+        "Experience": 8,
+        "City": "Delhi"
+    },
+    {
+        "EmployeeID": "E204",
+        "Name": "Pooja Iyer",
+        "Department": "Finance",
+        "Age": 29,
+        "Salary": 61000,
+        "Experience": 4,
+        "City": "Chennai"
+    },
+    {
+        "EmployeeID": "E205",
+        "Name": "Ritesh Gupta",
+        "Department": "IT",
+        "Age": null,
+        "Salary": 84000,
+        "Experience": 9,
+        "City": "Hyderabad"
+    },
+    {
+        "EmployeeID": "E206",
+        "Name": "Kavya Rao",
+        "Department": "Marketing",
+        "Age": 27,
+        "Salary": null,
+        "Experience": 2,
+        "City": "Mumbai"
+    },
+    {
+        "EmployeeID": "E207",
+        "Name": "Mohit Arora",
+        "Department": "HR",
+        "Age": 32,
+        "Salary": 53000,
+        "Experience": 6,
+        "City": "Jaipur"
+    },
+    {
+        "EmployeeID": "E202",
+        "Name": "Anjali Nair",
+        "Department": "IT",
+        "Age": 26,
+        "Salary": 65000,
+        "Experience": 3,
+        "City": "Bengaluru"
+    }
+]
