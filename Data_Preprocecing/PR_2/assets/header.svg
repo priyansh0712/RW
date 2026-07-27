@@ -1,0 +1,113 @@
+<svg width="800" height="220" viewBox="0 0 800 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&amp;family=Space+Grotesk:wght@500;700&amp;display=swap');
+      .title{font-family:'Outfit',sans-serif;font-weight:800;font-size:32px;fill:url(#tg);animation:pulse 4s ease-in-out infinite;}
+      .sub-top{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:11px;letter-spacing:2px;fill:#10b981;animation:fi 1.5s ease-out forwards;}
+      .sub-bot{font-family:'Outfit',sans-serif;font-weight:400;font-size:15px;fill:#475569;animation:su 1.8s cubic-bezier(0.16,1,0.3,1) forwards;}
+      .gl{stroke:#e2e8f0;stroke-dasharray:4 4;animation:gd 2s ease-out forwards;}
+      .badge{font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:700;fill:#fff;}
+      .bb{animation:fi 1s ease-out 2.5s forwards;opacity:0;}
+      .bt{animation:fi 1s ease-out 2.5s forwards;opacity:0;}
+      .pipe{stroke-width:2.5;stroke-linecap:round;fill:none;}
+      .node{stroke-width:2;}
+      .flow{stroke-dasharray:6 3;animation:flow 2s linear infinite;}
+      @media(prefers-color-scheme:dark){.sub-bot{fill:#94a3b8;}.gl{stroke:#1e293b;}}
+      @keyframes fi{to{opacity:1;}}
+      @keyframes su{from{transform:translateY(15px);opacity:0;}to{transform:translateY(0);opacity:1;}}
+      @keyframes pulse{0%,100%{filter:drop-shadow(0 0 3px rgba(16,185,129,0.3));}50%{filter:drop-shadow(0 0 12px rgba(99,102,241,0.5));}}
+      @keyframes gd{from{stroke-dashoffset:40;opacity:0;}to{stroke-dashoffset:0;opacity:0.35;}}
+      @keyframes flow{from{stroke-dashoffset:18;}to{stroke-dashoffset:0;}}
+    </style>
+    <linearGradient id="tg" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="40%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#ec4899"/>
+    </linearGradient>
+    <linearGradient id="csvg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981"/><stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="jsong" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b"/><stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+    <linearGradient id="sqlg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1"/><stop offset="100%" stop-color="#4f46e5"/>
+    </linearGradient>
+    <linearGradient id="apig" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ec4899"/><stop offset="100%" stop-color="#db2777"/>
+    </linearGradient>
+    <linearGradient id="dfg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/><stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+
+  <!-- Background grid -->
+  <line x1="30" y1="45"  x2="215" y2="45"  class="gl"/>
+  <line x1="30" y1="85"  x2="215" y2="85"  class="gl"/>
+  <line x1="30" y1="125" x2="215" y2="125" class="gl"/>
+  <line x1="30" y1="165" x2="215" y2="165" class="gl"/>
+  <line x1="50"  y1="25" x2="50"  y2="185" class="gl"/>
+  <line x1="95"  y1="25" x2="95"  y2="185" class="gl"/>
+  <line x1="140" y1="25" x2="140" y2="185" class="gl"/>
+  <line x1="185" y1="25" x2="185" y2="185" class="gl"/>
+
+  <!-- Source nodes (left column) -->
+  <!-- AGE -->
+  <rect x="18" y="28" width="44" height="28" rx="6" fill="url(#csvg)" filter="url(#glow)"/>
+  <text x="40" y="47" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-size="10" font-weight="700" fill="white">AGE</text>
+  <!-- BMI -->
+  <rect x="18" y="72" width="44" height="28" rx="6" fill="url(#jsong)" filter="url(#glow)"/>
+  <text x="40" y="91" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-size="10" font-weight="700" fill="white">BMI</text>
+  <!-- BP -->
+  <rect x="18" y="116" width="44" height="28" rx="6" fill="url(#sqlg)" filter="url(#glow)"/>
+  <text x="40" y="135" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-size="10" font-weight="700" fill="white">BP</text>
+  <!-- CHOL -->
+  <rect x="18" y="160" width="44" height="28" rx="6" fill="url(#apig)" filter="url(#glow)"/>
+  <text x="40" y="179" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-size="9" font-weight="700" fill="white">CHOL</text>
+
+  <!-- Flow lines to funnel -->
+  <line x1="62" y1="42"  x2="105" y2="105" stroke="#10b981" stroke-width="1.8" class="flow" stroke-dasharray="5 3"/>
+  <line x1="62" y1="86"  x2="105" y2="105" stroke="#f59e0b" stroke-width="1.8" class="flow" stroke-dasharray="5 3"/>
+  <line x1="62" y1="130" x2="105" y2="110" stroke="#6366f1" stroke-width="1.8" class="flow" stroke-dasharray="5 3"/>
+  <line x1="62" y1="174" x2="105" y2="115" stroke="#ec4899" stroke-width="1.8" class="flow" stroke-dasharray="5 3"/>
+
+  <!-- Funnel shape -->
+  <path d="M100 85 L155 85 L145 135 L110 135 Z" fill="#1e293b" stroke="#6366f1" stroke-width="1.5" opacity="0.9"/>
+  <text x="127" y="116" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-size="9" font-weight="700" fill="#6366f1">CLEAN</text>
+
+  <!-- Output arrow to DataFrame box -->
+  <line x1="155" y1="110" x2="178" y2="110" stroke="#10b981" stroke-width="2.5" marker-end="url(#arr)"/>
+
+  <!-- DataFrame output box -->
+  <rect x="178" y="88" width="52" height="44" rx="6" fill="url(#dfg)" stroke="#10b981" stroke-width="1.5" filter="url(#glow)"/>
+  <text x="204" y="107" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-size="8" font-weight="700" fill="#10b981">Clean</text>
+  <text x="204" y="120" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-size="8" font-weight="700" fill="#10b981">Data</text>
+
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#10b981"/>
+    </marker>
+  </defs>
+
+  <!-- Typography -->
+  <text x="265" y="58" class="sub-top">DATA PREPROCESSING · PR 2</text>
+  <text x="265" y="112" class="title">Patient Health Pipeline</text>
+  <text x="265" y="148" class="sub-bot">Data Imputation · Outlier Treatment · Cleaning &amp; Profiling</text>
+
+  <!-- Badges -->
+  <rect x="265" y="170" width="75" height="20" rx="4" fill="#064e3b" class="bb"/>
+  <text x="302.5" y="184" text-anchor="middle" class="badge bt">PATIENT CSV</text>
+
+  <rect x="347" y="170" width="75" height="20" rx="4" fill="#312e81" class="bb"/>
+  <text x="384.5" y="184" text-anchor="middle" class="badge bt">KNN &amp; MICE</text>
+
+  <rect x="429" y="170" width="95" height="20" rx="4" fill="#7f1d1d" class="bb"/>
+  <text x="476.5" y="184" text-anchor="middle" class="badge bt">WINSORIZATION</text>
+
+  <rect x="531" y="170" width="80" height="20" rx="4" fill="#4a044e" class="bb"/>
+  <text x="571" y="184" text-anchor="middle" class="badge bt">SCIKIT-LEARN</text>
+
+  <rect x="618" y="170" width="60" height="20" rx="4" fill="#1e3a5f" class="bb"/>
+  <text x="648" y="184" text-anchor="middle" class="badge bt">SCIPY</text>
+</svg>

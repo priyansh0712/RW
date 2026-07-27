@@ -1,0 +1,28 @@
+<svg width="800" height="52" viewBox="0 0 800 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@600&amp;display=swap');
+      .tt{font-family:'Outfit',sans-serif;font-weight:600;font-size:19px;fill:#0f172a;animation:sr 0.8s cubic-bezier(0.16,1,0.3,1) forwards;}
+      .ic{fill:url(#ig);animation:pk 3s infinite alternate;}
+      .dl{stroke:url(#lg);stroke-width:2;stroke-dasharray:800;stroke-dashoffset:800;animation:lr 1.8s cubic-bezier(0.16,1,0.3,1) forwards;}
+      @media(prefers-color-scheme:dark){.tt{fill:#f8fafc;}}
+      @keyframes sr{from{transform:translateX(-12px);opacity:0;}to{transform:translateX(0);opacity:1;}}
+      @keyframes pk{0%{filter:drop-shadow(0 0 2px #6366f166);}100%{filter:drop-shadow(0 0 9px #3b82f6cc);}}
+      @keyframes lr{to{stroke-dashoffset:0;}}
+    </style>
+    <linearGradient id="ig" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1"/><stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="lg" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6366f1" stop-opacity="0.9"/>
+      <stop offset="40%" stop-color="#3b82f6" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#f8fafc" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(6,6)">
+    <circle cx="19" cy="19" r="15" class="ic"/>
+    <path d="M19 9 v20 M9 19 h20 M19 13 a6 6 0 1 0 0 12 a6 6 0 1 0 0 -12" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <text x="46" y="25" class="tt">Part A — Handling Missing Values</text>
+    <line x1="0" y1="43" x2="800" y2="43" class="dl"/>
+  </g>
+</svg>
