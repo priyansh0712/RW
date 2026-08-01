@@ -14,8 +14,9 @@ The implementation is fully coded and documented in Python within a Jupyter Note
 
 <br>
 
+***[Video Link](https://drive.google.com/drive/folders/1fGLQ2xaL5yRNACFL7hBWyf8b-9hwpBRq)***.
 ---
-
+<br>
 <img src="assets/title_tools.svg" alt="Tools Used" width="100%">
 
 <br>
