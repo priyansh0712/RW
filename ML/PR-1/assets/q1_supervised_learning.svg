@@ -1,0 +1,65 @@
+<svg width="600" height="200" viewBox="0 0 600 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&amp;family=Space+Grotesk:wght@500;700&amp;display=swap');
+      .panel-bg { fill: #f8fafc; stroke: #e2e8f0; stroke-width: 1.5; rx: 12px; }
+      .panel-title { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 1px; fill: #475569; text-transform: uppercase; }
+      .label-text { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 13px; fill: #0f172a; }
+      .sub-text { font-family: 'Outfit', sans-serif; font-weight: 500; font-size: 11px; fill: #475569; }
+      .math-text { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 13px; fill: #1e1b4b; }
+      .highlight-box { fill: #f1f5f9; stroke: #cbd5e1; stroke-width: 1; rx: 6px; }
+      .box-input { fill: #ecfdf5; stroke: #10b981; stroke-width: 1.5; rx: 8px; }
+      .box-model { fill: #eef2ff; stroke: #6366f1; stroke-width: 1.5; rx: 8px; }
+      .box-output { fill: #fff7ed; stroke: #f59e0b; stroke-width: 1.5; rx: 8px; }
+      .arrow { stroke: #64748b; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+      @media (prefers-color-scheme: dark) {
+        .panel-bg { fill: #0f172a; stroke: #1e293b; }
+        .panel-title { fill: #94a3b8; }
+        .label-text { fill: #f8fafc; }
+        .sub-text { fill: #94a3b8; }
+        .math-text { fill: #ffffff; }
+        .highlight-box { fill: #1e293b; stroke: #334155; }
+        .box-input { fill: #064e3b; stroke: #10b981; }
+        .box-model { fill: #1e1b4b; stroke: #6366f1; }
+        .box-output { fill: #451a03; stroke: #f59e0b; }
+        .arrow { stroke: #94a3b8; }
+      }
+    </style>
+  </defs>
+  <rect width="600" height="200" class="panel-bg" />
+  
+  <g transform="translate(25, 20)">
+    <text x="0" y="15" class="panel-title">Q1 Supervised Learning Workflow</text>
+    <text x="0" y="35" class="label-text">Mapping Inputs (X) to Target (y)</text>
+    
+    <!-- Box 1: Input Features -->
+    <rect x="0" y="55" width="130" height="75" class="box-input" />
+    <text x="65" y="80" text-anchor="middle" class="label-text">Features (X)</text>
+    <text x="65" y="100" text-anchor="middle" class="sub-text">Area, Bedrooms</text>
+    <text x="65" y="115" text-anchor="middle" class="sub-text">Location, Age</text>
+    
+    <!-- Arrow 1 -->
+    <line x1="135" y1="92" x2="185" y2="92" class="arrow" />
+    <polyline points="178,86 185,92 178,98" class="arrow" fill="none" />
+
+    <!-- Box 2: ML Model -->
+    <rect x="190" y="55" width="140" height="75" class="box-model" />
+    <text x="260" y="80" text-anchor="middle" class="label-text">Model f(X)</text>
+    <text x="260" y="100" text-anchor="middle" class="sub-text">Learned Weights</text>
+    <text x="260" y="115" text-anchor="middle" class="math-text">y_hat = WX + b</text>
+
+    <!-- Arrow 2 -->
+    <line x1="335" y1="92" x2="385" y2="92" class="arrow" />
+    <polyline points="378,86 385,92 378,98" class="arrow" fill="none" />
+
+    <!-- Box 3: Prediction & Loss -->
+    <rect x="390" y="55" width="140" height="75" class="box-output" />
+    <text x="460" y="80" text-anchor="middle" class="label-text">Prediction (y_hat)</text>
+    <text x="460" y="100" text-anchor="middle" class="sub-text">Estimated Price</text>
+    <text x="460" y="115" text-anchor="middle" class="sub-text">vs Ground Truth y</text>
+
+    <!-- Feedback Loss Loop -->
+    <path d="M 460 135 V 155 H 260 V 135" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="3 3" fill="none" />
+    <text x="360" y="152" text-anchor="middle" style="font-size:10px; font-weight:700; fill:#ef4444; font-family:'Space Grotesk',sans-serif;">LOSS CALCULATION (MSE)</text>
+  </g>
+</svg>

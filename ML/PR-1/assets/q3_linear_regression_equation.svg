@@ -1,0 +1,42 @@
+<svg width="600" height="200" viewBox="0 0 600 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&amp;family=Space+Grotesk:wght@500;700&amp;display=swap');
+      .panel-bg { fill: #f8fafc; stroke: #e2e8f0; stroke-width: 1.5; rx: 12px; }
+      .panel-title { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 1px; fill: #475569; text-transform: uppercase; }
+      .label-text { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 13px; fill: #0f172a; }
+      .sub-text { font-family: 'Outfit', sans-serif; font-weight: 500; font-size: 11px; fill: #475569; }
+      .math-formula { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 17px; fill: #1e1b4b; }
+      .highlight-box { fill: #f1f5f9; stroke: #cbd5e1; stroke-width: 1; rx: 6px; }
+      @media (prefers-color-scheme: dark) {
+        .panel-bg { fill: #0f172a; stroke: #1e293b; }
+        .panel-title { fill: #94a3b8; }
+        .label-text { fill: #f8fafc; }
+        .sub-text { fill: #94a3b8; }
+        .math-formula { fill: #ffffff; }
+        .highlight-box { fill: #1e293b; stroke: #334155; }
+      }
+    </style>
+  </defs>
+  <rect width="600" height="200" class="panel-bg" />
+  
+  <g transform="translate(25, 20)">
+    <text x="0" y="15" class="panel-title">Q3 Mathematical Parameterization</text>
+    <text x="0" y="35" class="label-text">Fitted Slope &amp; Intercept on House Price Data</text>
+
+    <!-- Formula Box -->
+    <rect x="0" y="50" width="550" height="42" class="highlight-box" />
+    <text x="20" y="77" class="math-formula">y_hat = -1,163,519.18 + 14,788.31 × (area_sqft)</text>
+
+    <!-- Breakdown items -->
+    <g transform="translate(10, 110)">
+      <circle cx="5" cy="5" r="4" fill="#10b981" />
+      <text x="20" y="9" class="label-text">Slope (b₁ = ₹14,788.31):</text>
+      <text x="180" y="9" class="sub-text">Marginal valuation gain for every additional 1 sqft built-up area</text>
+
+      <circle cx="5" cy="30" r="4" fill="#6366f1" />
+      <text x="20" y="34" class="label-text">Intercept (b₀ = -₹11.64L):</text>
+      <text x="180" y="34" class="sub-text">Theoretical zero-area base constant in the linear plane</text>
+    </g>
+  </g>
+</svg>

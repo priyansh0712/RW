@@ -1,0 +1,183 @@
+<svg width="800" height="220" viewBox="0 0 800 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&amp;family=Space+Grotesk:wght@500;700&amp;display=swap');
+      
+      .title {
+        font-family: 'Outfit', sans-serif;
+        font-weight: 800;
+        font-size: 30px;
+        fill: url(#title-grad);
+        animation: text-pulse 4s ease-in-out infinite;
+      }
+      
+      .subtitle-top {
+        font-family: 'Space Grotesk', sans-serif;
+        font-weight: 700;
+        font-size: 11px;
+        letter-spacing: 2px;
+        fill: #10b981;
+        animation: fade-in 1.5s ease-out forwards;
+      }
+      
+      .subtitle-bottom {
+        font-family: 'Outfit', sans-serif;
+        font-weight: 400;
+        font-size: 15px;
+        fill: #475569;
+        animation: slide-up 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+      
+      .grid-line {
+        stroke: #e2e8f0;
+        stroke-dasharray: 4 4;
+        animation: grid-draw 2s ease-out forwards;
+      }
+      
+      .scatter-dot {
+        animation: dot-pop 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        transform-origin: center;
+      }
+      
+      .reg-line {
+        stroke: #6366f1;
+        stroke-width: 3;
+        stroke-linecap: round;
+        stroke-dasharray: 260;
+        stroke-dashoffset: 260;
+        animation: line-draw 2.2s ease-out 0.6s forwards;
+      }
+      
+      .loss-curve {
+        stroke: #ec4899;
+        stroke-width: 2.5;
+        stroke-dasharray: 200;
+        stroke-dashoffset: 200;
+        animation: curve-draw 2.5s ease-out 1.2s forwards;
+      }
+
+      .axis-line {
+        stroke: #94a3b8;
+        stroke-width: 1.5;
+      }
+      
+      .badge {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 9.5px;
+        font-weight: 700;
+        fill: #ffffff;
+      }
+      
+      .badge-bg {
+        fill: #064e3b;
+        rx: 10px;
+        animation: fade-in 1s ease-out 2.2s forwards;
+        opacity: 0;
+      }
+      
+      .badge-text {
+        animation: fade-in 1s ease-out 2.2s forwards;
+        opacity: 0;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        .subtitle-bottom { fill: #94a3b8; }
+        .grid-line { stroke: #1e293b; }
+        .axis-line { stroke: #475569; }
+        .badge-bg { fill: #022c22; }
+      }
+      
+      @keyframes fade-in {
+        to { opacity: 1; }
+      }
+      @keyframes slide-up {
+        from { transform: translateY(15px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+      }
+      @keyframes text-pulse {
+        0%, 100% { filter: drop-shadow(0 0 2px rgba(16, 185, 129, 0.2)); }
+        50% { filter: drop-shadow(0 0 10px rgba(99, 102, 241, 0.4)); }
+      }
+      @keyframes grid-draw {
+        from { stroke-dashoffset: 40; opacity: 0; }
+        to { stroke-dashoffset: 0; opacity: 0.4; }
+      }
+      @keyframes dot-pop {
+        from { transform: scale(0); opacity: 0; }
+        to { transform: scale(1); opacity: 0.85; }
+      }
+      @keyframes line-draw {
+        to { stroke-dashoffset: 0; }
+      }
+      @keyframes curve-draw {
+        to { stroke-dashoffset: 0; }
+      }
+    </style>
+    
+    <linearGradient id="title-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="45%" stop-color="#6366f1" />
+      <stop offset="100%" stop-color="#f59e0b" />
+    </linearGradient>
+
+    <linearGradient id="dot-grad-1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+    <linearGradient id="dot-grad-2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#d97706" />
+    </linearGradient>
+  </defs>
+
+  <!-- Left Visual Area: Regression & Gradient Plot -->
+  <g id="chart" transform="translate(25, 20)">
+    <!-- Grid -->
+    <line x1="10" y1="40" x2="200" y2="40" class="grid-line" />
+    <line x1="10" y1="80" x2="200" y2="80" class="grid-line" />
+    <line x1="10" y1="120" x2="200" y2="120" class="grid-line" />
+    <line x1="10" y1="160" x2="200" y2="160" class="grid-line" />
+    
+    <!-- Axes -->
+    <line x1="15" y1="10" x2="15" y2="175" class="axis-line" />
+    <line x1="15" y1="175" x2="205" y2="175" class="axis-line" />
+    
+    <!-- Data Scatter Points -->
+    <circle cx="35" cy="155" r="4.5" fill="url(#dot-grad-1)" class="scatter-dot" style="animation-delay: 0.1s" />
+    <circle cx="50" cy="142" r="4" fill="url(#dot-grad-1)" class="scatter-dot" style="animation-delay: 0.2s" />
+    <circle cx="68" cy="130" r="5" fill="url(#dot-grad-2)" class="scatter-dot" style="animation-delay: 0.3s" />
+    <circle cx="85" cy="115" r="4.5" fill="url(#dot-grad-1)" class="scatter-dot" style="animation-delay: 0.4s" />
+    <circle cx="102" cy="105" r="4" fill="url(#dot-grad-2)" class="scatter-dot" style="animation-delay: 0.5s" />
+    <circle cx="120" cy="85" r="5.5" fill="url(#dot-grad-1)" class="scatter-dot" style="animation-delay: 0.6s" />
+    <circle cx="138" cy="72" r="4" fill="url(#dot-grad-2)" class="scatter-dot" style="animation-delay: 0.7s" />
+    <circle cx="155" cy="58" r="5" fill="url(#dot-grad-1)" class="scatter-dot" style="animation-delay: 0.8s" />
+    <circle cx="175" cy="42" r="4.5" fill="url(#dot-grad-2)" class="scatter-dot" style="animation-delay: 0.9s" />
+    <circle cx="190" cy="30" r="5" fill="url(#dot-grad-1)" class="scatter-dot" style="animation-delay: 1.0s" />
+
+    <!-- Regression Line -->
+    <line x1="25" y1="165" x2="195" y2="28" class="reg-line" />
+    
+    <!-- Mini GD Parabolic Path -->
+    <path d="M 130 170 Q 165 110 190 140" fill="none" class="loss-curve" />
+  </g>
+
+  <!-- Typography Content -->
+  <g id="text-content">
+    <text x="255" y="55" class="subtitle-top">MACHINE LEARNING · PRACTICAL EXAM 1</text>
+    <text x="255" y="102" class="title">Real Estate Price Prediction</text>
+    <text x="255" y="138" class="subtitle-bottom">Supervised Regression, Polynomial Features &amp; Custom Gradient Descent</text>
+    
+    <!-- Tech pills/badges -->
+    <rect x="255" y="168" width="95" height="22" class="badge-bg" />
+    <text x="302.5" y="183" text-anchor="middle" class="badge badge-text">SUPERVISED ML</text>
+    
+    <rect x="358" y="168" width="115" height="22" class="badge-bg" />
+    <text x="415.5" y="183" text-anchor="middle" class="badge badge-text">LINEAR REGRESSION</text>
+    
+    <rect x="481" y="168" width="90" height="22" class="badge-bg" />
+    <text x="526" y="183" text-anchor="middle" class="badge badge-text">POLYNOMIAL</text>
+
+    <rect x="579" y="168" width="118" height="22" class="badge-bg" />
+    <text x="638" y="183" text-anchor="middle" class="badge badge-text">GRADIENT DESCENT</text>
+  </g>
+</svg>

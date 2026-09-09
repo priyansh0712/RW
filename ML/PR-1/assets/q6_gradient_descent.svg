@@ -1,0 +1,54 @@
+<svg width="600" height="200" viewBox="0 0 600 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&amp;family=Space+Grotesk:wght@500;700&amp;display=swap');
+      .panel-bg { fill: #f8fafc; stroke: #e2e8f0; stroke-width: 1.5; rx: 12px; }
+      .panel-title { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 1px; fill: #475569; text-transform: uppercase; }
+      .label-text { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 13px; fill: #0f172a; }
+      .sub-text { font-family: 'Outfit', sans-serif; font-weight: 500; font-size: 11px; fill: #475569; }
+      .math-text { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 12px; fill: #1e1b4b; }
+      .box { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1; rx: 6px; }
+      @media (prefers-color-scheme: dark) {
+        .panel-bg { fill: #0f172a; stroke: #1e293b; }
+        .panel-title { fill: #94a3b8; }
+        .label-text { fill: #f8fafc; }
+        .sub-text { fill: #94a3b8; }
+        .math-text { fill: #ffffff; }
+        .box { fill: #1e293b; stroke: #334155; }
+      }
+    </style>
+  </defs>
+  <rect width="600" height="200" class="panel-bg" />
+  
+  <g transform="translate(25, 20)">
+    <text x="0" y="15" class="panel-title">Part G — First-Principles Optimization</text>
+    <text x="0" y="35" class="label-text">Iterative Loss Surface Traversal: w := w − α (∂J/∂w)</text>
+
+    <!-- 3 Algorithm Boxes -->
+    <g transform="translate(0, 50)">
+      <!-- Batch GD -->
+      <rect x="0" y="0" width="170" height="105" class="box" />
+      <text x="15" y="22" class="label-text" style="fill:#10b981;">1. Batch GD</text>
+      <text x="15" y="42" class="sub-text">• Batch Size: All (4,200)</text>
+      <text x="15" y="60" class="sub-text">• Smooth, direct steps</text>
+      <text x="15" y="78" class="sub-text">• Epochs: 1,000 (lr=0.01)</text>
+      <text x="15" y="96" class="math-text">w ≈ 9.36M | b ≈ 23.64M</text>
+
+      <!-- SGD -->
+      <rect x="185" y="0" width="170" height="105" class="box" />
+      <text x="200" y="22" class="label-text" style="fill:#f59e0b;">2. Stochastic GD</text>
+      <text x="200" y="42" class="sub-text">• Batch Size: 1 sample</text>
+      <text x="200" y="60" class="sub-text">• Fast, noisy path</text>
+      <text x="200" y="78" class="sub-text">• Epochs: 50 (lr=0.001)</text>
+      <text x="200" y="96" class="math-text">w ≈ 9.43M | b ≈ 23.52M</text>
+
+      <!-- Mini-Batch GD -->
+      <rect x="370" y="0" width="175" height="105" class="box" />
+      <text x="385" y="22" class="label-text" style="fill:#6366f1;">3. Mini-Batch GD</text>
+      <text x="385" y="42" class="sub-text">• Batch Size: 32</text>
+      <text x="385" y="60" class="sub-text">• Best stability &amp; speed</text>
+      <text x="385" y="78" class="sub-text">• Epochs: 100 (lr=0.01)</text>
+      <text x="385" y="96" class="math-text">w ≈ 9.36M | b ≈ 23.76M</text>
+    </g>
+  </g>
+</svg>

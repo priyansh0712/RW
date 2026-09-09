@@ -1,0 +1,63 @@
+<svg width="600" height="200" viewBox="0 0 600 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&amp;family=Space+Grotesk:wght@500;700&amp;display=swap');
+      .panel-bg { fill: #f8fafc; stroke: #e2e8f0; stroke-width: 1.5; rx: 12px; }
+      .panel-title { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 1px; fill: #475569; text-transform: uppercase; }
+      .label-text { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 12px; fill: #0f172a; }
+      .sub-text { font-family: 'Outfit', sans-serif; font-weight: 500; font-size: 10px; fill: #475569; }
+      .card { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1; rx: 6px; }
+      @media (prefers-color-scheme: dark) {
+        .panel-bg { fill: #0f172a; stroke: #1e293b; }
+        .panel-title { fill: #94a3b8; }
+        .label-text { fill: #f8fafc; }
+        .sub-text { fill: #94a3b8; }
+        .card { fill: #1e293b; stroke: #334155; }
+      }
+    </style>
+  </defs>
+  <rect width="600" height="200" class="panel-bg" />
+  
+  <g transform="translate(20, 18)">
+    <text x="0" y="15" class="panel-title">Q4 Statistical Pillars</text>
+    <text x="0" y="33" class="label-text">5 Essential Assumptions of Linear Regression</text>
+
+    <!-- 5 Cards Layout -->
+    <g transform="translate(0, 48)">
+      <!-- Card 1 -->
+      <rect x="0" y="0" width="105" height="110" class="card" />
+      <text x="52" y="25" text-anchor="middle" class="label-text" style="fill:#10b981;">1. Linearity</text>
+      <text x="52" y="50" text-anchor="middle" class="sub-text">Straight-line</text>
+      <text x="52" y="65" text-anchor="middle" class="sub-text">relationship</text>
+      <text x="52" y="80" text-anchor="middle" class="sub-text">between X &amp; y</text>
+
+      <!-- Card 2 -->
+      <rect x="113" y="0" width="105" height="110" class="card" />
+      <text x="165" y="25" text-anchor="middle" class="label-text" style="fill:#6366f1;">2. Independence</text>
+      <text x="165" y="50" text-anchor="middle" class="sub-text">Errors are</text>
+      <text x="165" y="65" text-anchor="middle" class="sub-text">uncorrelated</text>
+      <text x="165" y="80" text-anchor="middle" class="sub-text">across samples</text>
+
+      <!-- Card 3 -->
+      <rect x="226" y="0" width="105" height="110" class="card" />
+      <text x="278" y="25" text-anchor="middle" class="label-text" style="fill:#f59e0b;">3. Homoscedastic</text>
+      <text x="278" y="50" text-anchor="middle" class="sub-text">Constant error</text>
+      <text x="278" y="65" text-anchor="middle" class="sub-text">variance</text>
+      <text x="278" y="80" text-anchor="middle" class="sub-text">across all X</text>
+
+      <!-- Card 4 -->
+      <rect x="339" y="0" width="105" height="110" class="card" />
+      <text x="391" y="25" text-anchor="middle" class="label-text" style="fill:#ec4899;">4. Normality</text>
+      <text x="391" y="50" text-anchor="middle" class="sub-text">Residual errors</text>
+      <text x="391" y="65" text-anchor="middle" class="sub-text">follow normal</text>
+      <text x="391" y="80" text-anchor="middle" class="sub-text">bell curve</text>
+
+      <!-- Card 5 -->
+      <rect x="452" y="0" width="105" height="110" class="card" />
+      <text x="504" y="25" text-anchor="middle" class="label-text" style="fill:#8b5cf6;">5. No Collinearity</text>
+      <text x="504" y="50" text-anchor="middle" class="sub-text">Predictors are</text>
+      <text x="504" y="65" text-anchor="middle" class="sub-text">not highly</text>
+      <text x="504" y="80" text-anchor="middle" class="sub-text">co-dependent</text>
+    </g>
+  </g>
+</svg>

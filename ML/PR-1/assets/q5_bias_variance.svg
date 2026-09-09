@@ -1,0 +1,61 @@
+<svg width="600" height="200" viewBox="0 0 600 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&amp;family=Space+Grotesk:wght@500;700&amp;display=swap');
+      .panel-bg { fill: #f8fafc; stroke: #e2e8f0; stroke-width: 1.5; rx: 12px; }
+      .panel-title { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 1px; fill: #475569; text-transform: uppercase; }
+      .label-text { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 13px; fill: #0f172a; }
+      .sub-text { font-family: 'Outfit', sans-serif; font-weight: 500; font-size: 11px; fill: #475569; }
+      .math-text { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 11px; fill: #1e1b4b; }
+      .axis { stroke: #64748b; stroke-width: 1.5; }
+      @media (prefers-color-scheme: dark) {
+        .panel-bg { fill: #0f172a; stroke: #1e293b; }
+        .panel-title { fill: #94a3b8; }
+        .label-text { fill: #f8fafc; }
+        .sub-text { fill: #94a3b8; }
+        .math-text { fill: #ffffff; }
+        .axis { stroke: #475569; }
+      }
+    </style>
+  </defs>
+  <rect width="600" height="200" class="panel-bg" />
+  
+  <g transform="translate(25, 20)">
+    <text x="0" y="15" class="panel-title">Q5 &amp; Q6 Bias-Variance &amp; Overfitting</text>
+    <text x="0" y="35" class="label-text">Model Capacity vs Total Prediction Error</text>
+
+    <!-- Left Graphic: U-Curve -->
+    <g transform="translate(0, 48)">
+      <line x1="15" y1="100" x2="230" y2="100" class="axis" />
+      <line x1="15" y1="100" x2="15" y2="10" class="axis" />
+      
+      <!-- Bias² Curve (Decreasing) -->
+      <path d="M 25 20 Q 90 85 220 92" stroke="#3b82f6" stroke-width="2" fill="none" />
+      
+      <!-- Variance Curve (Increasing) -->
+      <path d="M 25 95 Q 160 85 220 20" stroke="#ef4444" stroke-width="2" fill="none" />
+
+      <!-- Total Error (U shape) -->
+      <path d="M 30 35 Q 115 110 215 35" stroke="#10b981" stroke-width="2.5" fill="none" />
+      
+      <!-- Optimum Vertical Line -->
+      <line x1="115" y1="15" x2="115" y2="100" stroke="#6366f1" stroke-width="1.5" stroke-dasharray="3 3" />
+      <text x="115" y="112" text-anchor="middle" class="sub-text" style="font-weight:700; fill:#6366f1;">Sweet Spot</text>
+    </g>
+
+    <!-- Right Side: Key Takeaways -->
+    <g transform="translate(260, 52)">
+      <circle cx="5" cy="10" r="4" fill="#3b82f6" />
+      <text x="18" y="14" class="label-text">High Bias (Underfitting):</text>
+      <text x="18" y="30" class="sub-text">Model is too rigid; misses patterns (Simple Linear R²=56%)</text>
+
+      <circle cx="5" cy="55" r="4" fill="#10b981" />
+      <text x="18" y="59" class="label-text">Balanced Fit (Champion):</text>
+      <text x="18" y="75" class="sub-text">Multiple Linear Model (Test R²=91.78%, Gap=0.70%)</text>
+
+      <circle cx="5" cy="100" r="4" fill="#ef4444" />
+      <text x="18" y="104" class="label-text">High Variance (Overfitting):</text>
+      <text x="18" y="120" class="sub-text">Excessive complexity; memorizes noise instead of signal</text>
+    </g>
+  </g>
+</svg>

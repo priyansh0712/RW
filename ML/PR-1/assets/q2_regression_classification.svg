@@ -1,0 +1,67 @@
+<svg width="600" height="200" viewBox="0 0 600 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&amp;family=Space+Grotesk:wght@500;700&amp;display=swap');
+      .panel-bg { fill: #f8fafc; stroke: #e2e8f0; stroke-width: 1.5; rx: 12px; }
+      .panel-title { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 1px; fill: #475569; text-transform: uppercase; }
+      .label-text { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 13px; fill: #0f172a; }
+      .sub-text { font-family: 'Outfit', sans-serif; font-weight: 500; font-size: 11px; fill: #475569; }
+      .math-text { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 12px; fill: #1e1b4b; }
+      .box { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1.5; rx: 8px; }
+      .axis { stroke: #64748b; stroke-width: 1.5; }
+      @media (prefers-color-scheme: dark) {
+        .panel-bg { fill: #0f172a; stroke: #1e293b; }
+        .panel-title { fill: #94a3b8; }
+        .label-text { fill: #f8fafc; }
+        .sub-text { fill: #94a3b8; }
+        .math-text { fill: #ffffff; }
+        .box { fill: #1e293b; stroke: #334155; }
+        .axis { stroke: #475569; }
+      }
+    </style>
+  </defs>
+  <rect width="600" height="200" class="panel-bg" />
+  
+  <g transform="translate(25, 20)">
+    <text x="0" y="15" class="panel-title">Q2 Core Distinction</text>
+    <text x="0" y="35" class="label-text">Continuous Estimation vs Category Partitioning</text>
+
+    <!-- Left Box: Regression -->
+    <g transform="translate(0, 48)">
+      <rect x="0" y="0" width="260" height="110" class="box" />
+      <text x="15" y="22" class="label-text" style="fill:#10b981;">📈 Regression (Continuous)</text>
+      
+      <!-- Mini Plot -->
+      <line x1="20" y1="95" x2="110" y2="95" class="axis" />
+      <line x1="20" y1="95" x2="20" y2="35" class="axis" />
+      <circle cx="35" cy="85" r="3" fill="#10b981" />
+      <circle cx="55" cy="70" r="3" fill="#10b981" />
+      <circle cx="75" cy="55" r="3" fill="#10b981" />
+      <circle cx="95" cy="45" r="3" fill="#10b981" />
+      <line x1="25" y1="90" x2="105" y2="40" stroke="#10b981" stroke-width="2" />
+
+      <text x="125" y="50" class="math-text">Target: y ∈ ℝ</text>
+      <text x="125" y="70" class="sub-text">Example: ₹2.36 Crore</text>
+      <text x="125" y="90" class="sub-text">Metrics: MSE, RMSE, R²</text>
+    </g>
+
+    <!-- Right Box: Classification -->
+    <g transform="translate(285, 48)">
+      <rect x="0" y="0" width="260" height="110" class="box" />
+      <text x="15" y="22" class="label-text" style="fill:#6366f1;">🗂️ Classification (Discrete)</text>
+      
+      <!-- Mini Plot -->
+      <line x1="20" y1="95" x2="110" y2="95" class="axis" />
+      <line x1="20" y1="95" x2="20" y2="35" class="axis" />
+      <circle cx="40" cy="80" r="3" fill="#6366f1" />
+      <circle cx="50" cy="85" r="3" fill="#6366f1" />
+      <circle cx="85" cy="45" r="3.5" fill="#f59e0b" />
+      <circle cx="95" cy="55" r="3.5" fill="#f59e0b" />
+      <line x1="20" y1="40" x2="100" y2="95" stroke="#ef4444" stroke-width="2" stroke-dasharray="3 3" />
+
+      <text x="125" y="50" class="math-text">Target: y ∈ {0, 1, ...}</text>
+      <text x="125" y="70" class="sub-text">Example: Budget vs Luxury</text>
+      <text x="125" y="90" class="sub-text">Metrics: F1, Accuracy</text>
+    </g>
+  </g>
+</svg>
