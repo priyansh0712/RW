@@ -1,0 +1,72 @@
+<svg width="600" height="210" viewBox="0 0 600 210" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&amp;family=Space+Grotesk:wght@500;700&amp;display=swap');
+      .panel-bg { fill: #f8fafc; stroke: #e2e8f0; stroke-width: 1.5; rx: 12px; }
+      .panel-title { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 1px; fill: #475569; text-transform: uppercase; }
+      .label-text { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 13px; fill: #0f172a; }
+      .sub-text { font-family: 'Outfit', sans-serif; font-weight: 500; font-size: 10.5px; fill: #475569; }
+      .math-text { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 11.5px; fill: #1e1b4b; }
+      .box { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1.5; rx: 8px; }
+      .axis { stroke: #94a3b8; stroke-width: 1.2; }
+      @media (prefers-color-scheme: dark) {
+        .panel-bg { fill: #0f172a; stroke: #1e293b; }
+        .panel-title { fill: #94a3b8; }
+        .label-text { fill: #f8fafc; }
+        .sub-text { fill: #94a3b8; }
+        .math-text { fill: #ffffff; }
+        .box { fill: #1e293b; stroke: #334155; }
+        .axis { stroke: #475569; }
+      }
+    </style>
+  </defs>
+  <rect width="600" height="210" class="panel-bg" />
+  
+  <g transform="translate(20, 16)">
+    <text x="0" y="14" class="panel-title">Q1 &amp; Q2 Regularization Mechanics</text>
+    <text x="0" y="32" class="label-text">Geometric Constraint Regions: Lasso (L1) vs Ridge (L2)</text>
+
+    <!-- Left Box: Lasso L1 -->
+    <g transform="translate(0, 44)">
+      <rect x="0" y="0" width="270" height="135" class="box" />
+      <text x="14" y="20" class="label-text" style="fill:#10b981;">💎 Lasso (L1 Regularization)</text>
+      
+      <!-- Coordinate System & Diamond -->
+      <line x1="20" y1="80" x2="110" y2="80" class="axis" />
+      <line x1="65" y1="35" x2="65" y2="125" class="axis" />
+      <!-- Diamond Constraint -->
+      <polygon points="65,48 95,80 65,112 35,80" fill="#10b981" fill-opacity="0.18" stroke="#10b981" stroke-width="2" />
+      <!-- Loss Contours hitting corner at w1=0 -->
+      <ellipse cx="98" cy="45" rx="35" ry="20" transform="rotate(-30 98 45)" fill="none" stroke="#ef4444" stroke-width="1.2" stroke-dasharray="3 2" />
+      <ellipse cx="98" cy="45" rx="20" ry="12" transform="rotate(-30 98 45)" fill="none" stroke="#ef4444" stroke-width="1" stroke-dasharray="2 2" />
+      <circle cx="65" cy="48" r="3.5" fill="#ef4444" />
+
+      <text x="122" y="48" class="math-text">Loss: MSE + λ Σ|w_j|</text>
+      <text x="122" y="68" class="sub-text">✔ Sharp Diamond Corners</text>
+      <text x="122" y="86" class="sub-text">✔ Drives weights to exactly 0</text>
+      <text x="122" y="104" class="sub-text">✔ Built-in Feature Selection</text>
+      <text x="122" y="122" class="sub-text" style="fill:#10b981; font-weight:700;">Sparse Models</text>
+    </g>
+
+    <!-- Right Box: Ridge L2 -->
+    <g transform="translate(290, 44)">
+      <rect x="0" y="0" width="270" height="135" class="box" />
+      <text x="14" y="20" class="label-text" style="fill:#6366f1;">⚪ Ridge (L2 Regularization)</text>
+      
+      <!-- Coordinate System & Circle -->
+      <line x1="20" y1="80" x2="110" y2="80" class="axis" />
+      <line x1="65" y1="35" x2="65" y2="125" class="axis" />
+      <!-- Circle Constraint -->
+      <circle cx="65" cy="80" r="32" fill="#6366f1" fill-opacity="0.18" stroke="#6366f1" stroke-width="2" />
+      <!-- Loss Contours touching tangent edge -->
+      <ellipse cx="102" cy="48" rx="32" ry="18" transform="rotate(-30 102 48)" fill="none" stroke="#ef4444" stroke-width="1.2" stroke-dasharray="3 2" />
+      <circle cx="85" cy="62" r="3.5" fill="#ef4444" />
+
+      <text x="122" y="48" class="math-text">Loss: MSE + λ Σw_j²</text>
+      <text x="122" y="68" class="sub-text">✔ Smooth Spherical Ball</text>
+      <text x="122" y="86" class="sub-text">✔ Shrinks weights proportionally</text>
+      <text x="122" y="104" class="sub-text">✔ Non-zero coefficients</text>
+      <text x="122" y="122" class="sub-text" style="fill:#6366f1; font-weight:700;">Handles Multicollinearity</text>
+    </g>
+  </g>
+</svg>

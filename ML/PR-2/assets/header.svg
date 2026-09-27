@@ -1,0 +1,165 @@
+<svg width="800" height="220" viewBox="0 0 800 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&amp;family=Space+Grotesk:wght@500;700&amp;display=swap');
+      
+      .title {
+        font-family: 'Outfit', sans-serif;
+        font-weight: 800;
+        font-size: 28px;
+        fill: url(#title-grad);
+        animation: text-pulse 4s ease-in-out infinite;
+      }
+      
+      .subtitle-top {
+        font-family: 'Space Grotesk', sans-serif;
+        font-weight: 700;
+        font-size: 11px;
+        letter-spacing: 2px;
+        fill: #10b981;
+        animation: fade-in 1.5s ease-out forwards;
+      }
+      
+      .subtitle-bottom {
+        font-family: 'Outfit', sans-serif;
+        font-weight: 400;
+        font-size: 14.5px;
+        fill: #475569;
+        animation: slide-up 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+      
+      .tree-branch {
+        stroke: #94a3b8;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      
+      .tree-node {
+        animation: dot-pop 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        transform-origin: center;
+      }
+
+      .badge {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 9.5px;
+        font-weight: 700;
+        fill: #ffffff;
+      }
+      
+      .badge-bg {
+        fill: #064e3b;
+        rx: 10px;
+        animation: fade-in 1s ease-out 2.2s forwards;
+        opacity: 0;
+      }
+      
+      .badge-text {
+        animation: fade-in 1s ease-out 2.2s forwards;
+        opacity: 0;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        .subtitle-bottom { fill: #94a3b8; }
+        .tree-branch { stroke: #475569; }
+        .badge-bg { fill: #022c22; }
+      }
+      
+      @keyframes fade-in {
+        to { opacity: 1; }
+      }
+      @keyframes slide-up {
+        from { transform: translateY(15px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+      }
+      @keyframes text-pulse {
+        0%, 100% { filter: drop-shadow(0 0 2px rgba(16, 185, 129, 0.2)); }
+        50% { filter: drop-shadow(0 0 10px rgba(99, 102, 241, 0.4)); }
+      }
+      @keyframes dot-pop {
+        from { transform: scale(0); opacity: 0; }
+        to { transform: scale(1); opacity: 0.95; }
+      }
+    </style>
+    
+    <linearGradient id="title-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="40%" stop-color="#6366f1" />
+      <stop offset="75%" stop-color="#ec4899" />
+      <stop offset="100%" stop-color="#f59e0b" />
+    </linearGradient>
+
+    <linearGradient id="node-grad-1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+    <linearGradient id="node-grad-2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1" />
+      <stop offset="100%" stop-color="#4f46e5" />
+    </linearGradient>
+    <linearGradient id="node-grad-3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#d97706" />
+    </linearGradient>
+    <linearGradient id="node-grad-4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ec4899" />
+      <stop offset="100%" stop-color="#db2777" />
+    </linearGradient>
+  </defs>
+
+  <!-- Left Visual Area: Decision Tree Hierarchy + Regularization Ball -->
+  <g id="chart" transform="translate(25, 20)">
+    <!-- Tree Graph Branches -->
+    <path d="M 105 25 L 55 75 M 105 25 L 155 75" class="tree-branch" />
+    <path d="M 55 75 L 30 135 M 55 75 L 80 135" class="tree-branch" />
+    <path d="M 155 75 L 130 135 M 155 75 L 180 135" class="tree-branch" />
+    <path d="M 30 135 L 15 175 M 30 135 L 45 175" class="tree-branch" />
+    <path d="M 80 135 L 65 175 M 80 135 L 95 175" class="tree-branch" />
+
+    <!-- Root Node -->
+    <circle cx="105" cy="25" r="9" fill="url(#node-grad-1)" class="tree-node" style="animation-delay: 0.1s" />
+    
+    <!-- Level 1 Nodes -->
+    <circle cx="55" cy="75" r="8" fill="url(#node-grad-2)" class="tree-node" style="animation-delay: 0.25s" />
+    <circle cx="155" cy="75" r="8" fill="url(#node-grad-2)" class="tree-node" style="animation-delay: 0.3s" />
+    
+    <!-- Level 2 Nodes -->
+    <circle cx="30" cy="135" r="7" fill="url(#node-grad-3)" class="tree-node" style="animation-delay: 0.45s" />
+    <circle cx="80" cy="135" r="7" fill="url(#node-grad-3)" class="tree-node" style="animation-delay: 0.5s" />
+    <circle cx="130" cy="135" r="7" fill="url(#node-grad-3)" class="tree-node" style="animation-delay: 0.55s" />
+    <circle cx="180" cy="135" r="7" fill="url(#node-grad-3)" class="tree-node" style="animation-delay: 0.6s" />
+
+    <!-- Leaves -->
+    <circle cx="15" cy="175" r="5" fill="url(#node-grad-4)" class="tree-node" style="animation-delay: 0.7s" />
+    <circle cx="45" cy="175" r="5" fill="url(#node-grad-4)" class="tree-node" style="animation-delay: 0.75s" />
+    <circle cx="65" cy="175" r="5" fill="url(#node-grad-4)" class="tree-node" style="animation-delay: 0.8s" />
+    <circle cx="95" cy="175" r="5" fill="url(#node-grad-4)" class="tree-node" style="animation-delay: 0.85s" />
+
+    <!-- Regularization L1 Diamond Overlay (Faint Background) -->
+    <polygon points="155,140 185,160 155,180 125,160" stroke="#10b981" stroke-width="1.5" stroke-dasharray="3 3" fill="none" opacity="0.6" />
+    <circle cx="155" cy="160" r="16" stroke="#6366f1" stroke-width="1.2" stroke-dasharray="2 2" fill="none" opacity="0.6" />
+  </g>
+
+  <!-- Typography Content -->
+  <g id="text-content">
+    <text x="245" y="55" class="subtitle-top">MACHINE LEARNING · PRACTICAL EXAM 2</text>
+    <text x="245" y="100" class="title">Advanced Regression &amp; Tree Ensembles</text>
+    <text x="245" y="136" class="subtitle-bottom">Regularization (L1 &amp; L2), Cross-Validation, Decision Trees, Random Forests &amp; SVR</text>
+    
+    <!-- Tech pills/badges -->
+    <rect x="245" y="168" width="118" height="22" class="badge-bg" />
+    <text x="304" y="183" text-anchor="middle" class="badge badge-text">REGULARIZATION (L1/L2)</text>
+    
+    <rect x="371" y="168" width="105" height="22" class="badge-bg" />
+    <text x="423.5" y="183" text-anchor="middle" class="badge badge-text">CROSS-VALIDATION</text>
+    
+    <rect x="484" y="168" width="86" height="22" class="badge-bg" />
+    <text x="527" y="183" text-anchor="middle" class="badge badge-text">DECISION TREE</text>
+
+    <rect x="578" y="168" width="94" height="22" class="badge-bg" />
+    <text x="625" y="183" text-anchor="middle" class="badge badge-text">RANDOM FOREST</text>
+
+    <rect x="680" y="168" width="45" height="22" class="badge-bg" />
+    <text x="702.5" y="183" text-anchor="middle" class="badge badge-text">SVR</text>
+  </g>
+</svg>

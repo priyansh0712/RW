@@ -1,0 +1,94 @@
+<svg width="600" height="210" viewBox="0 0 600 210" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&amp;family=Space+Grotesk:wght@500;700&amp;display=swap');
+      .panel-bg { fill: #f8fafc; stroke: #e2e8f0; stroke-width: 1.5; rx: 12px; }
+      .panel-title { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 1px; fill: #475569; text-transform: uppercase; }
+      .label-text { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 12.5px; fill: #0f172a; }
+      .sub-text { font-family: 'Outfit', sans-serif; font-weight: 500; font-size: 10px; fill: #475569; }
+      .card { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1; rx: 6px; }
+      .fold-train { fill: #3b82f6; rx: 2px; }
+      .fold-val { fill: #ec4899; rx: 2px; }
+      .fold-unused { fill: #e2e8f0; rx: 2px; }
+      @media (prefers-color-scheme: dark) {
+        .panel-bg { fill: #0f172a; stroke: #1e293b; }
+        .panel-title { fill: #94a3b8; }
+        .label-text { fill: #f8fafc; }
+        .sub-text { fill: #94a3b8; }
+        .card { fill: #1e293b; stroke: #334155; }
+        .fold-unused { fill: #334155; }
+      }
+    </style>
+  </defs>
+  <rect width="600" height="210" class="panel-bg" />
+  
+  <g transform="translate(18, 16)">
+    <text x="0" y="14" class="panel-title">Q3 &amp; Q4 Resampling Strategies</text>
+    <text x="0" y="32" class="label-text">4 Cross-Validation Architectures Evaluated on House Prices</text>
+
+    <!-- 4 Cards -->
+    <g transform="translate(0, 46)">
+      <!-- Card 1: K-Fold -->
+      <g transform="translate(0, 0)">
+        <rect x="0" y="0" width="134" height="135" class="card" />
+        <text x="67" y="20" text-anchor="middle" class="label-text" style="fill:#3b82f6;">1. K-Fold (K=5)</text>
+        <!-- Fold Bars -->
+        <rect x="15" y="32" width="20" height="8" class="fold-val" />
+        <rect x="37" y="32" width="82" height="8" class="fold-train" />
+        <rect x="15" y="44" width="20" height="8" class="fold-train" />
+        <rect x="37" y="44" width="20" height="8" class="fold-val" />
+        <rect x="59" y="44" width="60" height="8" class="fold-train" />
+        <text x="67" y="75" text-anchor="middle" class="sub-text">Equal random split</text>
+        <text x="67" y="90" text-anchor="middle" class="sub-text">80% train / 20% test</text>
+        <text x="67" y="112" text-anchor="middle" style="font-size:10.5px; font-weight:700; fill:#3b82f6;">RMSE: ₹25.00L</text>
+      </g>
+
+      <!-- Card 2: Stratified K-Fold -->
+      <g transform="translate(142, 0)">
+        <rect x="0" y="0" width="134" height="135" class="card" />
+        <text x="67" y="20" text-anchor="middle" class="label-text" style="fill:#8b5cf6;">2. Stratified</text>
+        <!-- Fold Bars with colored segments representing quantile bins -->
+        <rect x="15" y="32" width="18" height="8" class="fold-val" />
+        <rect x="35" y="32" width="20" height="8" class="fold-train" />
+        <rect x="57" y="32" width="20" height="8" class="fold-train" />
+        <rect x="79" y="32" width="20" height="8" class="fold-train" />
+        <rect x="101" y="32" width="18" height="8" class="fold-train" />
+        <text x="67" y="60" text-anchor="middle" class="sub-text">Quantile-binned target</text>
+        <text x="67" y="75" text-anchor="middle" class="sub-text">Balanced class / value</text>
+        <text x="67" y="90" text-anchor="middle" class="sub-text">distribution per fold</text>
+        <text x="67" y="112" text-anchor="middle" style="font-size:10.5px; font-weight:700; fill:#8b5cf6;">RMSE: ₹24.99L</text>
+      </g>
+
+      <!-- Card 3: LOOCV -->
+      <g transform="translate(284, 0)">
+        <rect x="0" y="0" width="134" height="135" class="card" />
+        <text x="67" y="20" text-anchor="middle" class="label-text" style="fill:#ec4899;">3. LOOCV</text>
+        <!-- Fold Bars: 1 sample val, N-1 train -->
+        <rect x="15" y="32" width="5" height="8" class="fold-val" />
+        <rect x="22" y="32" width="97" height="8" class="fold-train" />
+        <rect x="15" y="44" width="25" height="8" class="fold-train" />
+        <rect x="42" y="44" width="5" height="8" class="fold-val" />
+        <rect x="49" y="44" width="70" height="8" class="fold-train" />
+        <text x="67" y="75" text-anchor="middle" class="sub-text">N=3,800 iterations</text>
+        <text x="67" y="90" text-anchor="middle" class="sub-text">1 sample test / fold</text>
+        <text x="67" y="112" text-anchor="middle" style="font-size:10.5px; font-weight:700; fill:#ec4899;">RMSE: ₹19.13L</text>
+      </g>
+
+      <!-- Card 4: Time Series Split -->
+      <g transform="translate(426, 0)">
+        <rect x="0" y="0" width="134" height="135" class="card" />
+        <text x="67" y="20" text-anchor="middle" class="label-text" style="fill:#f59e0b;">4. Time Series</text>
+        <!-- Expanding window fold bars -->
+        <rect x="15" y="32" width="30" height="8" class="fold-train" />
+        <rect x="47" y="32" width="18" height="8" class="fold-val" />
+        <rect x="67" y="32" width="52" height="8" class="fold-unused" />
+        <rect x="15" y="44" width="55" height="8" class="fold-train" />
+        <rect x="72" y="44" width="18" height="8" class="fold-val" />
+        <rect x="92" y="44" width="27" height="8" class="fold-unused" />
+        <text x="67" y="75" text-anchor="middle" class="sub-text">Temporal sale date</text>
+        <text x="67" y="90" text-anchor="middle" class="sub-text">Forward test walk</text>
+        <text x="67" y="112" text-anchor="middle" style="font-size:10.5px; font-weight:700; fill:#f59e0b;">RMSE: ₹24.95L</text>
+      </g>
+    </g>
+  </g>
+</svg>

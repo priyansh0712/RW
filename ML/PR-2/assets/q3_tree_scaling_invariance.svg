@@ -1,0 +1,65 @@
+<svg width="600" height="200" viewBox="0 0 600 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&amp;family=Space+Grotesk:wght@500;700&amp;display=swap');
+      .panel-bg { fill: #f8fafc; stroke: #e2e8f0; stroke-width: 1.5; rx: 12px; }
+      .panel-title { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 1px; fill: #475569; text-transform: uppercase; }
+      .label-text { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 13px; fill: #0f172a; }
+      .sub-text { font-family: 'Outfit', sans-serif; font-weight: 500; font-size: 11px; fill: #475569; }
+      .math-text { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 12px; fill: #1e1b4b; }
+      .box { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1.5; rx: 8px; }
+      .split-line { stroke: #ec4899; stroke-width: 2; stroke-dasharray: 4 3; }
+      @media (prefers-color-scheme: dark) {
+        .panel-bg { fill: #0f172a; stroke: #1e293b; }
+        .panel-title { fill: #94a3b8; }
+        .label-text { fill: #f8fafc; }
+        .sub-text { fill: #94a3b8; }
+        .math-text { fill: #ffffff; }
+        .box { fill: #1e293b; stroke: #334155; }
+      }
+    </style>
+  </defs>
+  <rect width="600" height="200" class="panel-bg" />
+  
+  <g transform="translate(20, 16)">
+    <text x="0" y="14" class="panel-title">Q5 Scale Invariance Principle</text>
+    <text x="0" y="32" class="label-text">Why Decision Trees Do NOT Require Feature Scaling</text>
+
+    <!-- Left Box: Tree Rank Splitting -->
+    <g transform="translate(0, 44)">
+      <rect x="0" y="0" width="270" height="125" class="box" />
+      <text x="14" y="20" class="label-text" style="fill:#10b981;">🌲 Tree Split: Order-Preserving</text>
+      
+      <!-- Axis with dots and split threshold -->
+      <line x1="20" y1="55" x2="150" y2="55" stroke="#94a3b8" stroke-width="2" />
+      <circle cx="35" cy="55" r="4" fill="#3b82f6" />
+      <circle cx="55" cy="55" r="4" fill="#3b82f6" />
+      <circle cx="80" cy="55" r="4" fill="#3b82f6" />
+      <!-- Cut threshold -->
+      <line x1="95" y1="35" x2="95" y2="75" class="split-line" />
+      <circle cx="110" cy="55" r="4" fill="#f59e0b" />
+      <circle cx="135" cy="55" r="4" fill="#f59e0b" />
+      
+      <text x="14" y="90" class="math-text">Condition: x_j ≤ θ</text>
+      <text x="14" y="108" class="sub-text">Multiplying by 1,000 only shifts threshold to 1,000 θ. Partition remains identical!</text>
+    </g>
+
+    <!-- Right Box: Distance / Gradient Sensitive Models -->
+    <g transform="translate(290, 44)">
+      <rect x="0" y="0" width="270" height="125" class="box" />
+      <text x="14" y="20" class="label-text" style="fill:#ef4444;">📐 Linear / SVR / Neural Models</text>
+      
+      <!-- Coordinate system showing distorted distance -->
+      <line x1="20" y1="75" x2="100" y2="75" stroke="#94a3b8" stroke-width="1.5" />
+      <line x1="20" y1="75" x2="20" y2="25" stroke="#94a3b8" stroke-width="1.5" />
+      <line x1="30" y1="65" x2="85" y2="35" stroke="#6366f1" stroke-width="2" />
+      <circle cx="30" cy="65" r="3.5" fill="#6366f1" />
+      <circle cx="85" cy="35" r="3.5" fill="#6366f1" />
+      
+      <text x="110" y="42" class="math-text">d = √ Σ(x_i - x_j)²</text>
+      <text x="110" y="60" class="sub-text">Large unscaled</text>
+      <text x="110" y="74" class="sub-text">features dominate</text>
+      <text x="14" y="108" class="sub-text" style="color:#ef4444;">Requires StandardScaler to prevent gradient distortion.</text>
+    </g>
+  </g>
+</svg>

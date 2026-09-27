@@ -1,0 +1,65 @@
+<svg width="600" height="200" viewBox="0 0 600 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&amp;family=Space+Grotesk:wght@500;700&amp;display=swap');
+      .panel-bg { fill: #f8fafc; stroke: #e2e8f0; stroke-width: 1.5; rx: 12px; }
+      .panel-title { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 1px; fill: #475569; text-transform: uppercase; }
+      .label-text { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 12.5px; fill: #0f172a; }
+      .sub-text { font-family: 'Outfit', sans-serif; font-weight: 500; font-size: 10px; fill: #475569; }
+      .math-text { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 12px; fill: #1e1b4b; }
+      .tree-card { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1.2; rx: 6px; }
+      .arrow { stroke: #64748b; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+      @media (prefers-color-scheme: dark) {
+        .panel-bg { fill: #0f172a; stroke: #1e293b; }
+        .panel-title { fill: #94a3b8; }
+        .label-text { fill: #f8fafc; }
+        .sub-text { fill: #94a3b8; }
+        .math-text { fill: #ffffff; }
+        .tree-card { fill: #1e293b; stroke: #334155; }
+        .arrow { stroke: #94a3b8; }
+      }
+    </style>
+  </defs>
+  <rect width="600" height="200" class="panel-bg" />
+  
+  <g transform="translate(18, 16)">
+    <text x="0" y="14" class="panel-title">Random Forest Architecture</text>
+    <text x="0" y="32" class="label-text">Bootstrap Aggregation (Bagging) &amp; Feature Subspace Randomization</text>
+
+    <!-- Original Dataset Box -->
+    <rect x="0" y="55" width="100" height="70" rx="8" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5" />
+    <text x="50" y="80" text-anchor="middle" class="label-text" style="font-size:11px;">Training Data</text>
+    <text x="50" y="98" text-anchor="middle" class="sub-text">3,040 rows</text>
+    <text x="50" y="112" text-anchor="middle" class="sub-text">12 features</text>
+
+    <!-- Arrows to 3 trees -->
+    <line x1="102" y1="70" x2="150" y2="55" class="arrow" />
+    <line x1="102" y1="90" x2="150" y2="90" class="arrow" />
+    <line x1="102" y1="110" x2="150" y2="125" class="arrow" />
+
+    <!-- 3 Parallel Trees -->
+    <g transform="translate(155, 38)">
+      <rect x="0" y="0" width="125" height="32" class="tree-card" />
+      <text x="10" y="20" class="sub-text" style="font-weight:700; fill:#10b981;">🌲 Tree 1 (Boot 1)</text>
+      <text x="110" y="20" text-anchor="end" class="sub-text">ŷ₁</text>
+
+      <rect x="0" y="38" width="125" height="32" class="tree-card" />
+      <text x="10" y="58" class="sub-text" style="font-weight:700; fill:#10b981;">🌲 Tree 2 (Boot 2)</text>
+      <text x="110" y="58" text-anchor="end" class="sub-text">ŷ₂</text>
+
+      <rect x="0" y="76" width="125" height="32" class="tree-card" />
+      <text x="10" y="96" class="sub-text" style="font-weight:700; fill:#10b981;">🌲 Tree B (100th)</text>
+      <text x="110" y="96" text-anchor="end" class="sub-text">ŷ_B</text>
+    </g>
+
+    <!-- Arrow to Average -->
+    <line x1="285" y1="90" x2="335" y2="90" class="arrow" />
+    <polygon points="333,86 340,90 333,94" fill="#64748b" />
+
+    <!-- Aggregator Box -->
+    <rect x="345" y="48" width="215" height="85" rx="8" fill="#eef2ff" stroke="#6366f1" stroke-width="1.5" />
+    <text x="452" y="72" text-anchor="middle" class="label-text" style="fill:#6366f1;">Ensemble Averaging</text>
+    <text x="452" y="92" text-anchor="middle" class="math-text">ŷ = 1/B Σ ŷ_b</text>
+    <text x="452" y="112" text-anchor="middle" class="sub-text">Cancels out variance, cuts test RMSE to ₹24.06L</text>
+  </g>
+</svg>
