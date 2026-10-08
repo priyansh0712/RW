@@ -1,0 +1,75 @@
+<svg width="600" height="210" viewBox="0 0 600 210" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&amp;family=Space+Grotesk:wght@500;700&amp;display=swap');
+      .panel-bg { fill: #f8fafc; stroke: #e2e8f0; stroke-width: 1.5; rx: 12px; }
+      .panel-title { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 1px; fill: #475569; text-transform: uppercase; }
+      .label-text { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 13px; fill: #0f172a; }
+      .sub-text { font-family: 'Outfit', sans-serif; font-weight: 500; font-size: 10.5px; fill: #475569; }
+      .math-text { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 11.5px; fill: #1e1b4b; }
+      .box { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1.5; rx: 8px; }
+      .axis { stroke: #94a3b8; stroke-width: 1.2; }
+      @media (prefers-color-scheme: dark) {
+        .panel-bg { fill: #0f172a; stroke: #1e293b; }
+        .panel-title { fill: #94a3b8; }
+        .label-text { fill: #f8fafc; }
+        .sub-text { fill: #94a3b8; }
+        .math-text { fill: #ffffff; }
+        .box { fill: #1e293b; stroke: #334155; }
+        .axis { stroke: #475569; }
+      }
+    </style>
+  </defs>
+  <rect width="600" height="210" class="panel-bg" />
+
+  <g transform="translate(20, 16)">
+    <text x="0" y="14" class="panel-title">Q1 Conceptual Theory</text>
+    <text x="0" y="32" class="label-text">Logistic Regression: Sigmoid Hypothesis &amp; Decision Boundary</text>
+
+    <!-- Left Box: Sigmoid Curve -->
+    <g transform="translate(0, 44)">
+      <rect x="0" y="0" width="270" height="135" class="box" />
+      <text x="14" y="20" class="label-text" style="fill:#3b82f6;">📈 The Sigmoid S-Curve</text>
+
+      <!-- Axes -->
+      <line x1="20" y1="115" x2="140" y2="115" class="axis" />
+      <line x1="80" y1="28" x2="80" y2="122" class="axis" />
+
+      <!-- Horizontal asymptote lines -->
+      <line x1="20" y1="36" x2="140" y2="36" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="2 2" />
+      <text x="14" y="40" class="sub-text" style="font-size:9px;">1.0</text>
+      <text x="14" y="78" class="sub-text" style="font-size:9px; fill:#10b981;">0.5</text>
+      <text x="14" y="118" class="sub-text" style="font-size:9px;">0.0</text>
+
+      <!-- Threshold 0.5 dashed -->
+      <line x1="20" y1="75" x2="140" y2="75" stroke="#10b981" stroke-width="1.2" stroke-dasharray="3 3" />
+
+      <!-- Sigmoid path -->
+      <path d="M 25 113 C 55 113, 65 110, 80 75 C 95 40, 105 38, 135 38" stroke="#3b82f6" stroke-width="2.5" fill="none" />
+      <circle cx="80" cy="75" r="3.5" fill="#10b981" />
+
+      <text x="150" y="48" class="math-text">P(y=1) = σ(z)</text>
+      <text x="150" y="68" class="sub-text">✔ z = wᵀx + b</text>
+      <text x="150" y="86" class="sub-text">✔ Output: [0.0, 1.0]</text>
+      <text x="150" y="104" class="sub-text">✔ Threshold = 0.5</text>
+      <text x="150" y="122" class="sub-text" style="fill:#3b82f6; font-weight:700;">Probabilistic Model</text>
+    </g>
+
+    <!-- Right Box: Decision Thresholding -->
+    <g transform="translate(290, 44)">
+      <rect x="0" y="0" width="270" height="135" class="box" />
+      <text x="14" y="20" class="label-text" style="fill:#10b981;">🎯 Risk Decision Thresholding</text>
+
+      <!-- Class Regions -->
+      <rect x="20" y="40" width="105" height="75" rx="6" fill="#3b82f6" fill-opacity="0.12" stroke="#3b82f6" stroke-width="1.2" />
+      <text x="72.5" y="65" text-anchor="middle" class="math-text" style="fill:#2563eb;">P &lt; 0.5</text>
+      <text x="72.5" y="85" text-anchor="middle" class="label-text" style="fill:#1d4ed8; font-size:12px;">Class 0</text>
+      <text x="72.5" y="102" text-anchor="middle" class="sub-text">Low Risk Account</text>
+
+      <rect x="145" y="40" width="105" height="75" rx="6" fill="#ef4444" fill-opacity="0.12" stroke="#ef4444" stroke-width="1.2" />
+      <text x="197.5" y="65" text-anchor="middle" class="math-text" style="fill:#dc2626;">P ≥ 0.5</text>
+      <text x="197.5" y="85" text-anchor="middle" class="label-text" style="fill:#b91c1c; font-size:12px;">Class 1</text>
+      <text x="197.5" y="102" text-anchor="middle" class="sub-text">High Risk Alert</text>
+    </g>
+  </g>
+</svg>

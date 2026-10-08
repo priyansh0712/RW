@@ -1,0 +1,108 @@
+<svg width="800" height="175" viewBox="0 0 800 175" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&amp;family=Space+Grotesk:wght@600;700&amp;display=swap');
+      .step-num { font-family: 'Space Grotesk', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 1.5px; fill: #10b981; }
+      .step-title { font-family: 'Outfit', sans-serif; font-size: 13.5px; font-weight: 700; fill: #0f172a; }
+      .step-desc { font-family: 'Outfit', sans-serif; font-size: 10.5px; font-weight: 500; fill: #64748b; }
+      .step-card { fill: #ffffff; stroke: #e2e8f0; stroke-width: 1.5; rx: 10px; }
+      .arrow { stroke: #94a3b8; stroke-width: 2; stroke-linecap: round; stroke-dasharray: 4 3; }
+      @media (prefers-color-scheme: dark) {
+        .step-title { fill: #f8fafc; }
+        .step-desc { fill: #94a3b8; }
+        .step-card { fill: #0f172a; stroke: #1e293b; }
+        .arrow { stroke: #475569; }
+      }
+    </style>
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6"/><stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6"/><stop offset="100%" stop-color="#6d28d9"/>
+    </linearGradient>
+    <linearGradient id="g3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ec4899"/><stop offset="100%" stop-color="#be185d"/>
+    </linearGradient>
+    <linearGradient id="g4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b"/><stop offset="100%" stop-color="#b45309"/>
+    </linearGradient>
+    <linearGradient id="g5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981"/><stop offset="100%" stop-color="#047857"/>
+    </linearGradient>
+    <marker id="arr" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#6366f1"/>
+    </marker>
+  </defs>
+
+  <!-- Step 1: Raw Data -->
+  <g transform="translate(10, 15)">
+    <rect x="0" y="0" width="138" height="145" class="step-card"/>
+    <rect x="0" y="0" width="138" height="5" rx="2" fill="url(#g1)"/>
+    <text x="14" y="28" class="step-num">STAGE 01</text>
+    <text x="14" y="50" class="step-title">Raw Dataset</text>
+    <text x="14" y="74" class="step-desc">• Risk_Alert.csv</text>
+    <text x="14" y="93" class="step-desc">• 4,600 Records</text>
+    <text x="14" y="112" class="step-desc">• 19 Raw Columns</text>
+    <text x="14" y="131" class="step-desc" style="fill:#ef4444; font-weight:700;">• 88% : 12% Split</text>
+  </g>
+
+  <!-- Flow line 1 -> 2 -->
+  <line x1="152" y1="88" x2="168" y2="88" stroke="#6366f1" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- Step 2: Preprocessing -->
+  <g transform="translate(172, 15)">
+    <rect x="0" y="0" width="138" height="145" class="step-card"/>
+    <rect x="0" y="0" width="138" height="5" rx="2" fill="url(#g2)"/>
+    <text x="14" y="28" class="step-num" style="fill:#8b5cf6;">STAGE 02</text>
+    <text x="14" y="50" class="step-title">Preprocessing</text>
+    <text x="14" y="74" class="step-desc">• KNN Imputation (k=5)</text>
+    <text x="14" y="93" class="step-desc">• Date Delta Features</text>
+    <text x="14" y="112" class="step-desc">• One-Hot Encoding</text>
+    <text x="14" y="131" class="step-desc" style="fill:#8b5cf6; font-weight:700;">• 24 Clean Features</text>
+  </g>
+
+  <!-- Flow line 2 -> 3 -->
+  <line x1="314" y1="88" x2="330" y2="88" stroke="#6366f1" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- Step 3: Resampling -->
+  <g transform="translate(334, 15)">
+    <rect x="0" y="0" width="138" height="145" class="step-card"/>
+    <rect x="0" y="0" width="138" height="5" rx="2" fill="url(#g3)"/>
+    <text x="14" y="28" class="step-num" style="fill:#ec4899;">STAGE 03</text>
+    <text x="14" y="50" class="step-title">Resampling</text>
+    <text x="14" y="74" class="step-desc">• Random Under/Over</text>
+    <text x="14" y="93" class="step-desc">• SMOTE Interpolation</text>
+    <text x="14" y="112" class="step-desc">• ADASYN Adaptive</text>
+    <text x="14" y="131" class="step-desc" style="fill:#ec4899; font-weight:700;">• 50:50 Balanced</text>
+  </g>
+
+  <!-- Flow line 3 -> 4 -->
+  <line x1="476" y1="88" x2="492" y2="88" stroke="#6366f1" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- Step 4: Modeling -->
+  <g transform="translate(496, 15)">
+    <rect x="0" y="0" width="138" height="145" class="step-card"/>
+    <rect x="0" y="0" width="138" height="5" rx="2" fill="url(#g4)"/>
+    <text x="14" y="28" class="step-num" style="fill:#f59e0b;">STAGE 04</text>
+    <text x="14" y="50" class="step-title">Ensembling</text>
+    <text x="14" y="74" class="step-desc">• Logistic Regression</text>
+    <text x="14" y="93" class="step-desc">• Decision Tree (Base)</text>
+    <text x="14" y="112" class="step-desc">• Random Forest (100)</text>
+    <text x="14" y="131" class="step-desc" style="fill:#f59e0b; font-weight:700;">• Bagging Variance Cut</text>
+  </g>
+
+  <!-- Flow line 4 -> 5 -->
+  <line x1="638" y1="88" x2="654" y2="88" stroke="#6366f1" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- Step 5: Optimization -->
+  <g transform="translate(658, 15)">
+    <rect x="0" y="0" width="132" height="145" class="step-card"/>
+    <rect x="0" y="0" width="132" height="5" rx="2" fill="url(#g5)"/>
+    <text x="14" y="28" class="step-num" style="fill:#10b981;">STAGE 05</text>
+    <text x="14" y="50" class="step-title">Tuned &amp; ROC</text>
+    <text x="14" y="74" class="step-desc">• GridSearchCV (219)</text>
+    <text x="14" y="93" class="step-desc" style="fill:#10b981; font-weight:700;">• 98.20% Recall</text>
+    <text x="14" y="112" class="step-desc" style="fill:#10b981; font-weight:700;">• 0.9999 AUC-ROC</text>
+    <text x="14" y="131" class="step-desc">• Production Ready</text>
+  </g>
+</svg>

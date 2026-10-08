@@ -1,0 +1,70 @@
+<svg width="800" height="215" viewBox="0 0 800 215" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&amp;family=Space+Grotesk:wght@600;700&amp;display=swap');
+      .panel-bg { fill: #f8fafc; stroke: #e2e8f0; stroke-width: 1.5; rx: 12px; }
+      .card-bg { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1.5; rx: 8px; }
+      .metric-name { font-family: 'Space Grotesk', sans-serif; font-size: 13.5px; font-weight: 700; }
+      .formula-box { fill: #f1f5f9; rx: 5px; }
+      .formula-text { font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 700; fill: #0f172a; }
+      .obj-text { font-family: 'Outfit', sans-serif; font-size: 11px; font-weight: 500; fill: #475569; }
+      .badge-focus { font-family: 'Space Grotesk', sans-serif; font-size: 9px; font-weight: 700; }
+      @media (prefers-color-scheme: dark) {
+        .panel-bg { fill: #0f172a; stroke: #1e293b; }
+        .card-bg { fill: #1e293b; stroke: #334155; }
+        .formula-box { fill: #0f172a; }
+        .formula-text { fill: #f8fafc; }
+        .obj-text { fill: #94a3b8; }
+      }
+    </style>
+  </defs>
+
+  <rect width="800" height="215" class="panel-bg" />
+
+  <!-- Grid of 4 Cards -->
+  <!-- Card 1: Precision -->
+  <g transform="translate(18, 16)">
+    <rect x="0" y="0" width="372" height="85" class="card-bg" />
+    <rect x="0" y="0" width="6" height="85" rx="3" fill="#3b82f6" />
+    <text x="18" y="24" class="metric-name" style="fill:#2563eb;">🎯 Precision</text>
+    <rect x="18" y="34" width="135" height="34" class="formula-box" />
+    <text x="85" y="55" text-anchor="middle" class="formula-text">TP / (TP + FP)</text>
+    <text x="168" y="44" class="obj-text">• Minimizes False Alarms (FP)</text>
+    <text x="168" y="62" class="obj-text">• Purity of High Risk predictions</text>
+  </g>
+
+  <!-- Card 2: Recall (Key Metric) -->
+  <g transform="translate(410, 16)">
+    <rect x="0" y="0" width="372" height="85" class="card-bg" style="stroke:#10b981; stroke-width:2;" />
+    <rect x="0" y="0" width="6" height="85" rx="3" fill="#10b981" />
+    <text x="18" y="24" class="metric-name" style="fill:#059669;">⭐ Recall (Sensitivity / TPR)</text>
+    <rect x="250" y="10" width="110" height="18" rx="4" fill="#d1fae5" />
+    <text x="305" y="23" text-anchor="middle" class="badge-focus" style="fill:#065f46;">PRIMARY METRIC</text>
+    <rect x="18" y="34" width="135" height="34" class="formula-box" />
+    <text x="85" y="55" text-anchor="middle" class="formula-text" style="fill:#047857;">TP / (TP + FN)</text>
+    <text x="168" y="44" class="obj-text" style="font-weight:700; fill:#059669;">• Minimizes Missed Defaults (FN)</text>
+    <text x="168" y="62" class="obj-text">• Highest business priority in credit risk</text>
+  </g>
+
+  <!-- Card 3: F1-Score -->
+  <g transform="translate(18, 114)">
+    <rect x="0" y="0" width="372" height="85" class="card-bg" />
+    <rect x="0" y="0" width="6" height="85" rx="3" fill="#8b5cf6" />
+    <text x="18" y="24" class="metric-name" style="fill:#7c3aed;">⚖️ F1-Score</text>
+    <rect x="18" y="34" width="170" height="34" class="formula-box" />
+    <text x="103" y="55" text-anchor="middle" class="formula-text">2 · (P · R) / (P + R)</text>
+    <text x="200" y="44" class="obj-text">• Harmonic Mean of P &amp; R</text>
+    <text x="200" y="62" class="obj-text">• Balances false alarms vs misses</text>
+  </g>
+
+  <!-- Card 4: False Positive Rate (FPR) -->
+  <g transform="translate(410, 114)">
+    <rect x="0" y="0" width="372" height="85" class="card-bg" />
+    <rect x="0" y="0" width="6" height="85" rx="3" fill="#f59e0b" />
+    <text x="18" y="24" class="metric-name" style="fill:#d97706;">📉 False Positive Rate (FPR)</text>
+    <rect x="18" y="34" width="135" height="34" class="formula-box" />
+    <text x="85" y="55" text-anchor="middle" class="formula-text">FP / (FP + TN)</text>
+    <text x="168" y="44" class="obj-text">• 1 - Specificity (X-axis of ROC)</text>
+    <text x="168" y="62" class="obj-text">• Rate of healthy users falsely alerted</text>
+  </g>
+</svg>

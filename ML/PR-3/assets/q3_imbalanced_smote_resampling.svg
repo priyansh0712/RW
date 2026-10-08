@@ -1,0 +1,81 @@
+<svg width="600" height="210" viewBox="0 0 600 210" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&amp;family=Space+Grotesk:wght@500;700&amp;display=swap');
+      .panel-bg { fill: #f8fafc; stroke: #e2e8f0; stroke-width: 1.5; rx: 12px; }
+      .panel-title { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 1px; fill: #475569; text-transform: uppercase; }
+      .label-text { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 13px; fill: #0f172a; }
+      .sub-text { font-family: 'Outfit', sans-serif; font-weight: 500; font-size: 10.5px; fill: #475569; }
+      .math-text { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 11.5px; fill: #1e1b4b; }
+      .box { rx: 8px; stroke-width: 1.5; fill: #ffffff; stroke: #cbd5e1; }
+      @media (prefers-color-scheme: dark) {
+        .panel-bg { fill: #0f172a; stroke: #1e293b; }
+        .panel-title { fill: #94a3b8; }
+        .label-text { fill: #f8fafc; }
+        .sub-text { fill: #94a3b8; }
+        .math-text { fill: #ffffff; }
+        .box { fill: #1e293b; stroke: #334155; }
+      }
+    </style>
+  </defs>
+  <rect width="600" height="210" class="panel-bg" />
+
+  <g transform="translate(20, 16)">
+    <text x="0" y="14" class="panel-title">Q6 &amp; Part D Resampling Theory</text>
+    <text x="0" y="32" class="label-text">SMOTE &amp; ADASYN Synthetic Minority Generation Mechanism</text>
+
+    <!-- Left Box: Before Resampling -->
+    <g transform="translate(0, 44)">
+      <rect x="0" y="0" width="270" height="135" class="box" />
+      <text x="14" y="20" class="label-text" style="fill:#ef4444;">⚠️ Severe Imbalance (88% vs 12%)</text>
+      
+      <!-- Majority vs Minority scatter dots -->
+      <!-- Majority points (blue) -->
+      <circle cx="35" cy="50" r="4.5" fill="#3b82f6" opacity="0.8" />
+      <circle cx="55" cy="65" r="4.5" fill="#3b82f6" opacity="0.8" />
+      <circle cx="40" cy="80" r="4.5" fill="#3b82f6" opacity="0.8" />
+      <circle cx="70" cy="45" r="4.5" fill="#3b82f6" opacity="0.8" />
+      <circle cx="60" cy="95" r="4.5" fill="#3b82f6" opacity="0.8" />
+      <circle cx="85" cy="75" r="4.5" fill="#3b82f6" opacity="0.8" />
+      <circle cx="45" cy="115" r="4.5" fill="#3b82f6" opacity="0.8" />
+      <circle cx="95" cy="110" r="4.5" fill="#3b82f6" opacity="0.8" />
+
+      <!-- Minority points (red) -->
+      <circle cx="80" cy="105" r="4.5" fill="#ef4444" />
+      <circle cx="105" cy="80" r="4.5" fill="#ef4444" />
+
+      <text x="125" y="48" class="math-text">Class 0: 3,234 (87.9%)</text>
+      <text x="125" y="66" class="math-text" style="fill:#dc2626;">Class 1: 446 (12.1%)</text>
+      <text x="125" y="86" class="sub-text">❌ Decision boundary shifts</text>
+      <text x="125" y="104" class="sub-text">❌ Minority treated as noise</text>
+      <text x="125" y="122" class="sub-text" style="fill:#ef4444; font-weight:700;">High False Negatives</text>
+    </g>
+
+    <!-- Right Box: SMOTE Interpolation -->
+    <g transform="translate(290, 44)">
+      <rect x="0" y="0" width="270" height="135" class="box" />
+      <text x="14" y="20" class="label-text" style="fill:#10b981;">🧬 SMOTE Synthetic Interpolation</text>
+      
+      <!-- Connect minority dots with segment -->
+      <line x1="35" y1="95" x2="95" y2="45" stroke="#10b981" stroke-width="1.8" stroke-dasharray="3 2" />
+      
+      <!-- Real minority points -->
+      <circle cx="35" cy="95" r="5" fill="#ef4444" />
+      <text x="25" y="112" class="sub-text" style="font-size:9px;">xᵢ</text>
+
+      <circle cx="95" cy="45" r="5" fill="#ef4444" />
+      <text x="102" y="45" class="sub-text" style="font-size:9px;">x_kNN</text>
+
+      <!-- Synthetic interpolated point -->
+      <circle cx="65" cy="70" r="5.5" fill="#10b981" />
+      <circle cx="65" cy="70" r="8" stroke="#10b981" stroke-width="1.5" stroke-dasharray="2 2" fill="none" />
+      <text x="50" y="60" class="math-text" style="fill:#059669; font-size:9px;">x_syn</text>
+
+      <text x="122" y="48" class="math-text">x_new = xᵢ + λ(x_kNN - xᵢ)</text>
+      <text x="122" y="68" class="sub-text">✔ k-Nearest Neighbors</text>
+      <text x="122" y="86" class="sub-text">✔ Continuous interpolation</text>
+      <text x="122" y="104" class="sub-text">✔ No exact duplicate rows</text>
+      <text x="122" y="122" class="sub-text" style="fill:#10b981; font-weight:700;">Robust Decision Margin</text>
+    </g>
+  </g>
+</svg>

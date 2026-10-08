@@ -1,0 +1,116 @@
+<svg width="800" height="220" viewBox="0 0 800 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&amp;family=Space+Grotesk:wght@500;700&amp;display=swap');
+      .title { font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 29px; fill: url(#title-grad); animation: text-pulse 4s ease-in-out infinite; }
+      .sub-top { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 2px; fill: #10b981; animation: fi 1.5s ease-out forwards; }
+      .sub-bot { font-family: 'Outfit', sans-serif; font-weight: 400; font-size: 14.5px; fill: #475569; animation: su 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+      .gl { stroke: #e2e8f0; stroke-dasharray: 4 4; opacity: 0.4; }
+      .badge { font-family: 'Space Grotesk', sans-serif; font-size: 9.5px; font-weight: 700; fill: #ffffff; }
+      .bb { animation: fi 1s ease-out 2.5s forwards; opacity: 0; }
+      .bt { animation: fi 1s ease-out 2.5s forwards; opacity: 0; }
+      .roc-line { stroke: url(#roc-grad); stroke-width: 2.5; stroke-linecap: round; fill: none; }
+      .roc-diag { stroke: #94a3b8; stroke-width: 1.5; stroke-dasharray: 4 4; }
+      .cm-box { rx: 5px; stroke-width: 1.5; }
+      @media (prefers-color-scheme: dark) {
+        .sub-bot { fill: #94a3b8; }
+        .gl { stroke: #1e293b; }
+      }
+      @keyframes fi { to { opacity: 1; } }
+      @keyframes su { from { transform: translateY(15px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+      @keyframes text-pulse {
+        0%, 100% { filter: drop-shadow(0 0 2px rgba(16, 185, 129, 0.3)); }
+        50% { filter: drop-shadow(0 0 10px rgba(99, 102, 241, 0.5)); }
+      }
+    </style>
+    <linearGradient id="title-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="35%" stop-color="#6366f1"/>
+      <stop offset="70%" stop-color="#ec4899"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+    <linearGradient id="roc-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="50%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#ec4899"/>
+    </linearGradient>
+    <linearGradient id="cm-tp" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981"/><stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="cm-tn" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1"/><stop offset="100%" stop-color="#4f46e5"/>
+    </linearGradient>
+    <linearGradient id="cm-fp" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b"/><stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+    <linearGradient id="cm-fn" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ef4444"/><stop offset="100%" stop-color="#dc2626"/>
+    </linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+
+  <!-- Left Graphic: ROC Curve & Confusion Matrix Dashboard -->
+  <g transform="translate(18, 20)">
+    <!-- Background Grid -->
+    <line x1="20" y1="20" x2="190" y2="20" class="gl"/>
+    <line x1="20" y1="65" x2="190" y2="65" class="gl"/>
+    <line x1="20" y1="110" x2="190" y2="110" class="gl"/>
+    <line x1="20" y1="155" x2="190" y2="155" class="gl"/>
+    <line x1="20" y1="20" x2="20" y2="155" class="gl"/>
+    <line x1="62" y1="20" x2="62" y2="155" class="gl"/>
+    <line x1="105" y1="20" x2="105" y2="155" class="gl"/>
+    <line x1="148" y1="20" x2="148" y2="155" class="gl"/>
+    <line x1="190" y1="20" x2="190" y2="155" class="gl"/>
+
+    <!-- ROC Axis & Curve -->
+    <line x1="25" y1="150" x2="115" y2="150" stroke="#64748b" stroke-width="1.8"/>
+    <line x1="25" y1="150" x2="25" y2="60" stroke="#64748b" stroke-width="1.8"/>
+    <line x1="25" y1="150" x2="115" y2="60" class="roc-diag"/>
+    <path d="M 25 150 Q 28 64 115 60" class="roc-line" filter="url(#glow)"/>
+    <circle cx="48" cy="78" r="4.5" fill="#ec4899" filter="url(#glow)"/>
+    <text x="70" y="108" font-family="Space Grotesk,sans-serif" font-size="8.5" font-weight="700" fill="#10b981">AUC = 1.0</text>
+
+    <!-- Mini Confusion Matrix (Right side of left area) -->
+    <rect x="130" y="60" width="36" height="36" fill="url(#cm-tp)" stroke="#10b981" class="cm-box" filter="url(#glow)"/>
+    <text x="148" y="78" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-size="9" font-weight="700" fill="white">TP</text>
+    <text x="148" y="90" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-size="7.5" fill="white">111</text>
+
+    <rect x="170" y="60" width="36" height="36" fill="url(#cm-fp)" stroke="#f59e0b" class="cm-box"/>
+    <text x="188" y="78" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-size="9" font-weight="700" fill="white">FP</text>
+    <text x="188" y="90" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-size="7.5" fill="white">0</text>
+
+    <rect x="130" y="100" width="36" height="36" fill="url(#cm-fn)" stroke="#ef4444" class="cm-box"/>
+    <text x="148" y="118" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-size="9" font-weight="700" fill="white">FN</text>
+    <text x="148" y="130" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-size="7.5" fill="white">0</text>
+
+    <rect x="170" y="100" width="36" height="36" fill="url(#cm-tn)" stroke="#6366f1" class="cm-box" filter="url(#glow)"/>
+    <text x="188" y="118" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-size="9" font-weight="700" fill="white">TN</text>
+    <text x="188" y="130" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-size="7.5" fill="white">809</text>
+
+    <!-- Label below -->
+    <text x="110" y="172" text-anchor="middle" font-family="Space Grotesk,sans-serif" font-size="9" font-weight="700" fill="#64748b">ROC-AUC &amp; CONFUSION MATRIX</text>
+  </g>
+
+  <!-- Typography Content -->
+  <g transform="translate(245, 0)">
+    <text x="0" y="55" class="sub-top">MACHINE LEARNING · PR 3</text>
+    <text x="0" y="100" class="title">Risk Alert Classification Pipeline</text>
+    <text x="0" y="136" class="sub-bot">Logistic Regression · SMOTE &amp; ADASYN · Tree Ensembles · Hyperparameter Tuning</text>
+
+    <!-- Badges -->
+    <rect x="0" y="168" width="95" height="22" rx="4" fill="#064e3b" class="bb"/>
+    <text x="47.5" y="183" text-anchor="middle" class="badge bt">RISK ALERT CSV</text>
+
+    <rect x="103" y="168" width="118" height="22" rx="4" fill="#312e81" class="bb"/>
+    <text x="162" y="183" text-anchor="middle" class="badge bt">LOGISTIC REGRESSION</text>
+
+    <rect x="229" y="168" width="98" height="22" rx="4" fill="#701a75" class="bb"/>
+    <text x="278" y="183" text-anchor="middle" class="badge bt">SMOTE &amp; ADASYN</text>
+
+    <rect x="335" y="168" width="92" height="22" rx="4" fill="#7f1d1d" class="bb"/>
+    <text x="381" y="183" text-anchor="middle" class="badge bt">RANDOM FOREST</text>
+
+    <rect x="435" y="168" width="90" height="22" rx="4" fill="#1e3a5f" class="bb"/>
+    <text x="480" y="183" text-anchor="middle" class="badge bt">ROC-AUC (0.999)</text>
+  </g>
+</svg>
