@@ -1,106 +1,107 @@
-# Ames Housing Price Estimator — Supervised Learning Pipeline
+# 🏡 Ames House Price Estimator
 
-End-to-end Machine Learning pipeline for residential property valuation benchmarked on the Ames Housing Dataset. Developed for PropTech platforms (comparable to NoBroker and MagicBricks) to provide real-time, automated property price estimations.
-
----
-
-## 📌 Project Overview
-- **Domain:** PropTech / Real Estate Automated Valuation Model (AVM)
-- **Dataset:** [Ames Housing Dataset (Kaggle / UCI)](https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques)
-- **Features:** 79 residential property characteristics (living area, quality ratings, age, amenities, neighborhood)
-- **Target:** `SalePrice` (USD, continuous regression task)
-- **Best Model:** Tuned XGBoost Regressor ($R^2 = 0.929$, RMSE = \$19,810)
+> An automated residential property valuation pipeline built with Supervised Learning on the Ames Housing Dataset.
 
 ---
 
-## 🗂️ Project Structure
+## ⚡ Quick Architecture Pipeline
 
-```text
-├── Data/
-│   ├── train.csv                      # Training dataset (1,460 instances, 81 columns)
-│   └── test.csv                       # Test dataset (1,459 instances, 80 columns)
-├── final_exam.ipynb                   # Primary executed Jupyter Notebook with EDA, modeling, plots
-├── HousePrice_SupervisedLearning.ipynb# Fully executed notebook for GitHub submission
-├── house_price_model.pkl              # Serialized end-to-end scikit-learn Pipeline
-├── summary_report.md                  # Executive summary report (~450 words)
-├── requirements.txt                   # Environment dependencies
-└── README.md                          # Project documentation and guide
+```mermaid
+flowchart LR
+    A[📂 Ames Housing Data] --> B[🧹 Cleaning & Outliers]
+    B --> C[⚙️ Feature Engineering]
+    C --> D[🤖 Model Benchmarking]
+    D --> E[🏆 Champion: Tuned XGBoost]
+    E --> F[🚀 Deployed Pipeline]
 ```
 
 ---
 
-## 📊 Pipeline Workflow
+## 1. 🔍 Target Distribution (Raw vs log1p)
+> **Problem:** `SalePrice` was heavily right-skewed.  
+> **Solution:** Applying `log1p` normalized the target for homoscedastic errors.
 
-1. **Exploratory Data Analysis (EDA):**
-   - Target normality analysis (raw right-skewed distribution vs `log1p` transformed normal distribution).
-   - Univariate analysis on top numerical and high-impact categorical features (`Neighborhood`, `BldgType`, `HouseStyle`).
-   - Bivariate correlation heatmaps, boxplots, scatter plots, and leverage outlier identification.
-2. **Preprocessing & Feature Engineering:**
-   - Imputation of structural missingness (`None` for absent amenities, `0` for absent numeric measurements, median for continuous).
-   - Pruning columns with >80% missing records (`PoolQC`, `MiscFeature`, `Alley`, `Fence`).
-   - Outlier elimination: removed 2 extreme abnormal sale records (`GrLivArea > 4000` & `SalePrice < $300k`).
-   - Feature engineering: `TotalSF`, `HouseAge`, `RemodAge`, `HasGarage`, `HasPool`.
-   - Ordinal mapping for quality rankings, one-hot encoding for nominal categories, `log1p` normalization for skewed features, and `StandardScaler` on continuous inputs.
-3. **Model Development & Benchmarking:**
-   - **Baseline:** Ordinary Least Squares (OLS) Linear Regression
-   - **Regularized:** Ridge Regression (L2) & Lasso Regression (L1 feature pruning)
-   - **Ensemble Tree Models:** Random Forest Regressor & XGBoost Regressor
-   - **Hyperparameter Optimization:** `RandomizedSearchCV` on XGBoost
-4. **Model Diagnostics & Explainability:**
-   - Residual analysis (Fitted vs Residuals, Histogram, Q-Q Plot) verifying homoscedasticity.
-   - SHAP (SHapley Additive exPlanations) beeswarm and single-instance waterfall plots.
-5. **Deployment:**
-   - Production-ready `scikit-learn` Pipeline serialized with `joblib`.
+![Target Distribution](assets/plot_1.png)
 
 ---
 
-## 📈 Model Performance Summary
+## 2. 📊 Univariate & Categorical Patterns
+> Top distribution patterns across high-impact categories (`Neighborhood`, `BldgType`, `HouseStyle`).
 
-| Model | RMSE ($) | MAE ($) | R² Score | 5-Fold CV (Log RMSE) | Training Time (s) |
-|---|---|---|---|---|---|
-| **Linear Regression** | \$22,670.76 | \$15,744.11 | 0.9070 | 0.1342 | 0.038s |
-| **Ridge Regression** | \$20,532.41 | \$14,640.89 | 0.9237 | 0.1171 | 0.045s |
-| **Lasso Regression** | \$20,114.80 | \$14,142.06 | 0.9268 | 0.1148 | 0.092s |
-| **Random Forest** | \$23,288.94 | \$16,081.25 | 0.9018 | 0.1385 | 0.612s |
-| **Champion (XGBoost)** | **\$19,810.01** | **\$13,446.72** | **0.9290** | **0.1132** | 0.540s |
+![Categorical Distributions](assets/plot_3.png)
 
 ---
 
-## 🚀 How to Run
+## 3. 🎯 Top Features & Critical Outlier Flagging
+> **Outlier Fix:** Two extreme houses (>4,000 sq ft & <\$300k) were high-leverage points tilting the OLS plane; removing them was essential.
 
-### 1. Prerequisites & Environment Setup
-Clone the repository and install dependencies:
-```bash
-git clone https://github.com/priyansh0712/RW.git
-cd RW_Exam/ML/Final_Exam
-pip install -r requirements.txt
-```
+| Correlation Heatmap (Top 15) | Bivariate Scatters & Outliers Flagged |
+| :---: | :---: |
+| ![Heatmap](assets/plot_4.png) | ![Outliers](assets/plot_5.png) |
 
-### 2. Run the Notebook
-Open either `final_exam.ipynb` or `HousePrice_SupervisedLearning.ipynb` in VS Code or Jupyter Lab:
-```bash
-jupyter notebook final_exam.ipynb
-```
+---
 
-### 3. Load Model and Run Inference
+## 4. 🏷️ Price Drivers: Quality & Neighborhood
+> Higher `OverallQual` exponentializes price; neighborhoods like **NridgHt** and **NoRidge** command top valuation.
+
+![Quality and Neighborhood vs Price](assets/plot_6.png)
+
+---
+
+## 5. 🤖 Model Benchmarking & Performance
+
+| Model | Test RMSE ($) | Test MAE ($) | R² Score | Training Time |
+| :--- | :---: | :---: | :---: | :---: |
+| **Linear Regression** | \$22,630.09 | \$15,809.65 | 0.9073 | 0.007s |
+| **Ridge Regression (L2)** | \$20,496.55 | \$14,689.64 | 0.9239 | 0.013s |
+| **Lasso Regression (L1)** | \$20,058.13 | \$14,724.30 | 0.9272 | 0.071s |
+| **Random Forest** | \$23,215.93 | \$16,306.66 | 0.9024 | 0.521s |
+| **XGBoost (Baseline)** | \$19,811.79 | \$14,348.33 | 0.9289 | 0.352s |
+| 🏆 **Tuned XGBoost** | **\$19,635.92** | **\$14,161.55** | **0.9302** | 22.84s |
+
+---
+
+## 6. 🏆 Champion Model: Tuned XGBoost
+> Tight alignment along the ideal $y = x$ benchmark line ($R^2 = 0.9302$, $\text{RMSE} = \$19,635.92$).
+
+![Champion Model Actual vs Predicted](assets/plot_11.png)
+
+---
+
+## 7. 📈 Residual Diagnostics
+> Residuals are randomly scattered around zero with near-normal distribution and constant variance (homoscedasticity).
+
+![Residual Diagnostics](assets/plot_12.png)
+
+---
+
+## 8. 🧠 Explainability with SHAP Values
+> **Top Market Drivers:** `TotalSF` (usable size), `OverallQual` (build quality), and `HouseAge` dominate predictions.
+
+| Global Impact (Beeswarm) | Single Property Breakdown (Waterfall) |
+| :---: | :---: |
+| ![SHAP Beeswarm](assets/plot_13.png) | ![SHAP Waterfall](assets/plot_14.png) |
+
+---
+
+## 9. 🚀 Fast Inference & Testing
+
 ```python
-import joblib
-import pandas as pd
-import numpy as np
+import joblib, numpy as np, pandas as pd
 
-# Load trained pipeline
-pipeline = joblib.load('house_price_model.pkl')
+# 1. Load Model
+model = joblib.load('house_price_model.pkl')
 
-# Load sample property
-sample = pd.read_csv('Data/test.csv').iloc[:1].copy()
-sample['TotalSF'] = sample['TotalBsmtSF'] + sample['1stFlrSF'] + sample['2ndFlrSF']
-sample['HouseAge'] = (sample['YrSold'] - sample['YearBuilt']).apply(lambda x: max(0, x))
-sample['RemodAge'] = (sample['YrSold'] - sample['YearRemodAdd']).apply(lambda x: max(0, x))
-sample['HasGarage'] = (sample['GarageArea'] > 0).astype(int)
-sample['HasPool'] = (sample['PoolArea'] > 0).astype(int)
-
-# Predict estimated market price (USD)
-predicted_price = np.expm1(pipeline.predict(sample))
-print(f"Estimated Property Value: ${predicted_price[0]:,.2f}")
+# 2. Predict on sample property
+pred_price = np.expm1(model.predict(sample_features))
+print(f"Predicted Valuation: ${pred_price[0]:,.2f}")
 ```
 
+### ✅ Unseen Samples Validation
+
+| Actual Price | Predicted Price | Error % |
+| :---: | :---: | :---: |
+| **\$208,500.00** | **\$205,000.97** | **1.68%** |
+| **\$181,500.00** | **\$179,478.88** | **1.11%** |
+| **\$223,500.00** | **\$214,350.92** | **4.09%** |
+| **\$140,000.00** | **\$146,233.70** | **4.45%** |
