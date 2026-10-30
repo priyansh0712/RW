@@ -1,0 +1,92 @@
+<svg width="800" height="175" viewBox="0 0 800 175" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&amp;family=Space+Grotesk:wght@600;700&amp;display=swap');
+      .step-num { font-family: 'Space Grotesk', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 1.5px; fill: #6366f1; }
+      .step-title { font-family: 'Outfit', sans-serif; font-size: 13.5px; font-weight: 700; fill: #0f172a; }
+      .step-desc { font-family: 'Outfit', sans-serif; font-size: 10.5px; font-weight: 500; fill: #64748b; }
+      .step-card { fill: #ffffff; stroke: #e2e8f0; stroke-width: 1.5; rx: 10px; }
+      @media (prefers-color-scheme: dark) {
+        .step-title { fill: #f8fafc; }
+        .step-desc { fill: #94a3b8; }
+        .step-card { fill: #0f172a; stroke: #1e293b; }
+      }
+    </style>
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#3b82f6"/><stop offset="100%" stop-color="#1d4ed8"/></linearGradient>
+    <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#8b5cf6"/><stop offset="100%" stop-color="#6d28d9"/></linearGradient>
+    <linearGradient id="g3" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#ec4899"/><stop offset="100%" stop-color="#be185d"/></linearGradient>
+    <linearGradient id="g4" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#f59e0b"/><stop offset="100%" stop-color="#b45309"/></linearGradient>
+    <linearGradient id="g5" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#10b981"/><stop offset="100%" stop-color="#047857"/></linearGradient>
+    <marker id="arr" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#6366f1"/>
+    </marker>
+  </defs>
+
+  <!-- Step 1: Raw Data -->
+  <g transform="translate(10, 15)">
+    <rect x="0" y="0" width="138" height="145" class="step-card"/>
+    <rect x="0" y="0" width="138" height="5" rx="2" fill="url(#g1)"/>
+    <text x="14" y="28" class="step-num">STAGE 01</text>
+    <text x="14" y="50" class="step-title">Raw Dataset</text>
+    <text x="14" y="74" class="step-desc">• data.csv</text>
+    <text x="14" y="93" class="step-desc">• 5,200 Records</text>
+    <text x="14" y="112" class="step-desc">• 19 Columns</text>
+    <text x="14" y="131" class="step-desc" style="fill:#3b82f6; font-weight:700;">• Dual Targets</text>
+  </g>
+
+  <line x1="152" y1="88" x2="168" y2="88" stroke="#6366f1" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- Step 2: Preprocessing -->
+  <g transform="translate(172, 15)">
+    <rect x="0" y="0" width="138" height="145" class="step-card"/>
+    <rect x="0" y="0" width="138" height="5" rx="2" fill="url(#g2)"/>
+    <text x="14" y="28" class="step-num" style="fill:#8b5cf6;">STAGE 02</text>
+    <text x="14" y="50" class="step-title">Preprocessing</text>
+    <text x="14" y="74" class="step-desc">• SimpleImputer</text>
+    <text x="14" y="93" class="step-desc">• StandardScaler</text>
+    <text x="14" y="112" class="step-desc">• OneHotEncoder</text>
+    <text x="14" y="131" class="step-desc">• 80/20 Train-Test</text>
+  </g>
+
+  <line x1="314" y1="88" x2="330" y2="88" stroke="#6366f1" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- Step 3: Bagging & Boosting -->
+  <g transform="translate(334, 15)">
+    <rect x="0" y="0" width="138" height="145" class="step-card"/>
+    <rect x="0" y="0" width="138" height="5" rx="2" fill="url(#g3)"/>
+    <text x="14" y="28" class="step-num" style="fill:#ec4899;">STAGE 03</text>
+    <text x="14" y="50" class="step-title">Base Ensembles</text>
+    <text x="14" y="74" class="step-desc">• Bagging (50 Trees)</text>
+    <text x="14" y="93" class="step-desc">• AdaBoost</text>
+    <text x="14" y="112" class="step-desc">• Gradient Boosting</text>
+    <text x="14" y="131" class="step-desc">• XGBoost (Reg/Clf)</text>
+  </g>
+
+  <line x1="476" y1="88" x2="492" y2="88" stroke="#6366f1" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- Step 4: Voting & Stacking -->
+  <g transform="translate(496, 15)">
+    <rect x="0" y="0" width="138" height="145" class="step-card"/>
+    <rect x="0" y="0" width="138" height="5" rx="2" fill="url(#g4)"/>
+    <text x="14" y="28" class="step-num" style="fill:#f59e0b;">STAGE 04</text>
+    <text x="14" y="50" class="step-title">Meta Ensembles</text>
+    <text x="14" y="74" class="step-desc">• Hard Voting</text>
+    <text x="14" y="93" class="step-desc">• Soft Voting</text>
+    <text x="14" y="112" class="step-desc">• Stacking Classifier</text>
+    <text x="14" y="131" class="step-desc">• Stacking Regressor</text>
+  </g>
+
+  <line x1="638" y1="88" x2="654" y2="88" stroke="#6366f1" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- Step 5: Dual Leaderboard & Reporting -->
+  <g transform="translate(658, 15)">
+    <rect x="0" y="0" width="132" height="145" class="step-card"/>
+    <rect x="0" y="0" width="132" height="5" rx="2" fill="url(#g5)"/>
+    <text x="12" y="28" class="step-num" style="fill:#10b981;">STAGE 05</text>
+    <text x="12" y="50" class="step-title">Benchmarking</text>
+    <text x="12" y="74" class="step-desc" style="fill:#10b981; font-weight:700;">• GradBoost (72.4% F1)</text>
+    <text x="12" y="93" class="step-desc" style="fill:#10b981; font-weight:700;">• Stacking (9.79 RMSE)</text>
+    <text x="12" y="112" class="step-desc">• ROC-AUC Analysis</text>
+    <text x="12" y="131" class="step-desc">• Residual Diagnostics</text>
+  </g>
+</svg>
